@@ -18,6 +18,11 @@ Auth::routes();
 //APP
 Route::group(['prefix' => '', 'namespace' => 'App'], function(){
     Route::get('/', ['uses' => 'StaticsController@home']);
+    Route::get('/galeries', ['uses' => 'StaticsController@showGaleries']);
+    Route::get('/logements', ['uses' => 'StaticsController@showLogement']);
+    Route::get('/reservation', ['uses' => 'StaticsController@showReservation']);
+    Route::get('/acces', ['uses' => 'StaticsController@showAcces']);
+    
 });
 
 //ADMIN
