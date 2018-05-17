@@ -1,0 +1,118 @@
+.home-nav {
+    background-color: #fcc12d;
+    ul {
+        padding: 10px 0px;
+        .nav-item {
+            .nav-link {
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.sidebar {
+    position: absolute;
+    top: 0px;
+    width: 7%;
+    background-color: #414143;
+    height: 100%;
+    .content-sidebar {
+        margin-top: 111px;
+        img {
+            cursor: pointer;
+            width: 30px;
+        }
+    }
+
+}
+
+.content-page {
+    margin-left: 7%;
+
+    .home {
+        background-image: url("/images/photo-1.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        //padding: 100px 0px;
+        .first-section {
+            height: 675px;
+            h1 {
+                color: white;
+                font-size: 64px;
+                font-weight: bold;
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .second-section {
+        //margin-top: 113px;
+        .news-block {
+            background-color: #2177bc;
+            position: relative;
+            z-index: -1;
+            padding: 50px 0px 20px;
+            span{
+                position: absolute;
+                top: 0;
+                font-size: 35px;
+                color: white;
+                font-weight: bold;
+            }
+            img{
+                position: relative;
+                width: 95%;
+                z-index: -1;
+            }
+            .item-text{
+                position: absolute;
+                z-index: 1;
+                button{
+                    z-index: 30;
+                    position: relative;
+                    right: -160px;
+                    bottom: -120px;
+                }
+            }
+        }
+        img {
+            position: absolute;
+            object-fit: cover;
+            height: auto;
+            width: 93%;
+            z-index: -1;
+            top: 0;
+        }
+        .first-block{
+            .item-text{
+                //margin-bottom: 100px;
+                height: 360px;
+            }
+        }
+        h2 {
+            color: white;
+            font-size: 45px;
+            font-weight: bold;
+            //margin-bottom: 40px;
+        }
+    }
+
+    .classic-btn {
+        background-color: transparent;
+        padding: 10px 25px;
+        border: 6px solid white;
+        font-size: 35px;
+        cursor: pointer;
+
+        font-weight: bold;
+        color: white;
+
+        &.min{
+            padding: 4px 20px;
+            font-size: 20px;
+        }
+    }
+}
