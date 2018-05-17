@@ -9,6 +9,7 @@ html{
 
 .home-nav {
     background-color: #fcc12d;
+    margin-left: 7%;
     ul {
         padding: 10px 0px;
         .nav-item {
@@ -34,7 +35,7 @@ button{
     top: 0px;
     width: 7%;
     background-color: #414143;
-    height: 191%;
+    height: 251%;
     .content-sidebar {
         margin-top: 111px;
         img {
@@ -159,6 +160,22 @@ button{
         &.article-3{
             background-image: url("/images/photo-article-3.png");
         }
+        &.info{
+            width: 32%;
+            background-color: #19a679;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 30px;
+            height: 206%;
+            span{
+                font-size: 25px;
+                color: white;
+                font-family: "Sergo", sans-serif;
+                &.decal{
+                    padding-left: 98px;
+                }
+            }
+        }
         &.maternelle-1{
             width: 32%;
             padding: 10px;
@@ -183,6 +200,7 @@ button{
                 left:90px;
                 border: 6px solid white;
                 font-size: 15px;
+                position: relative;
                 cursor: pointer;
                 font-weight: bold;
                 color: white;
