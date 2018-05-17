@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//APP
+Route::group(['prefix' => '', 'namespace' => 'App'], function(){
+    Route::get('/', ['uses' => 'StaticsController@home']);
+});
+
+//ADMIN
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    Route::get('login', ['uses' => 'Auth\LoginController@showLoginForm']);
+    Route::post('login', ['uses' => 'Auth\LoginController@login']);
+    Route::get('logout', ['uses' => 'Auth\LoginController@logout']);
+    Route::get('/', ['uses' => 'DashboardController@dashboard']);
+});
