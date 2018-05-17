@@ -1,9 +1,19 @@
+@font-face {
+    font-family: "Sergo";
+    src: url("/fonts/Sergo-UI.ttf") format("ttf");
+}
+html{
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .home-nav {
     background-color: #fcc12d;
     ul {
         padding: 10px 0px;
         .nav-item {
             .nav-link {
+                font-family: "Sergo", sans-serif;
                 color: black;
                 font-size: 22px;
                 font-weight: bold;
@@ -12,12 +22,19 @@
     }
 }
 
+h1,h2{
+  font-family: "Patrick", sans-serif;
+}
+button{
+    font-family: "Sergo", sans-serif;
+}
+
 .sidebar {
     position: absolute;
     top: 0px;
     width: 7%;
     background-color: #414143;
-    height: 100%;
+    height: 191%;
     .content-sidebar {
         margin-top: 111px;
         img {
@@ -113,6 +130,63 @@
         &.min{
             padding: 4px 20px;
             font-size: 20px;
+        }
+    }
+}
+
+
+.second-section{
+    width: 100%;
+    height: 100vh;
+    .block{
+        margin-right: 10px;
+
+        width: 65%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        &.article-1{
+            background-image: url("/images/photo-article-1.png");
+        }
+        &.article-2{
+            background-image: url("/images/photo-article-2.png");
+        }
+        &.article-3{
+            background-image: url("/images/photo-article-3.png");
+        }
+        &.maternelle-1{
+            width: 32%;
+            padding: 10px;
+            background-color: #2177bc;
+            background-image: url("/images/photo-2.png");
+            background-size: 95%;
+            position: relative;
+            h2{
+                font-size: 25px;
+            }
+            span{
+                position: absolute;
+                top: 10px;
+                font-size: 35px;
+                color: white;
+                font-weight: bold;
+            }
+            .classic-btn {
+                background-color: transparent;
+                padding: 7px 25px;
+                bottom: -70px;
+                left:90px;
+                border: 6px solid white;
+                font-size: 15px;
+                cursor: pointer;
+                font-weight: bold;
+                color: white;
+            }
         }
     }
 }

@@ -1,6 +1,17 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@font-face {
+    font-family: "Sergo";
+    src: url("/fonts/Sergo-UI.ttf") format("ttf");
+}
+@font-face {
+    font-family: "Patrick";
+    src: url("/fonts/PatrickHandSC-Regular.ttf") format("ttf");
+}
+
+
+
 
 // Variables
 @import "variables";

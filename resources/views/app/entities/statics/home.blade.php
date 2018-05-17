@@ -39,37 +39,28 @@
                     </div>
                 </div>
             </div>
-            <div class="second-section">
-                <div class="d-flex mt-3">
-                    <div class="col-md-6 first-block d-flex flex-column justify-content-start align-items-center">
-                        <div class="d-flex justify-content-center align-items-center w-100 position-relative" style="margin-bottom: 10px">
-                            {{--<div class="item-img">--}}
-                            <img src="{{ asset('images/photo-article-1.png') }}" alt="">
-                            {{--</div>--}}
-                            <div class=" item-text d-flex flex-column justify-content-center align-items-center">
-                                <h2>Article 1</h2>
-                                <button class="mt-1 classic-btn">En savoir plus</button>
-                            </div>
-                        </div>
-                        <div class="w-100 d-flex justify-content-center align-items-center position-relative" style="margin-bottom: 10px">
-                            {{--<div class="item-img">--}}
-                            <img src="{{ asset('images/photo-article-1.png') }}" alt="">
-                            {{--</div>--}}
-                            <div class=" item-text d-flex flex-column justify-content-center align-items-center">
-                                <h2>Article 2</h2>
-                                <button class="mt-1 classic-btn">En savoir plus</button>
-                            </div>
-                        </div>
+            <div class="second-section mt-4 ml-2">
+                <div class="d-flex h-50">
+                    <div class="block article-1">
+                        <h2>Article 1</h2>
+                        <button class="mt-1 classic-btn">En savoir plus</button>
                     </div>
-                    <div style="width:  49%;height: 530px;" class="col-md-6 news-block d-flex flex-column  justify-content-center align-items-center">
-                        {{--<div class="item-img">--}}
+                    <div class="block maternelle-1">
                         <span>News</span>
-                        <img src="{{ asset('images/photo-2.png') }}" alt="">
-                        {{--</div>--}}
-                        <div class="item-text d-flex flex-column justify-content-center align-items-center">
-                            <h2>Article 1</h2>
-                            <button class="mt-1 classic-btn min">En savoir plus</button>
-                        </div>
+                        <h2 class="text-center">Réhabilitation d'une maternelle</h2>
+                        <button class="mt-1 classic-btn">En savoir plus</button>
+                    </div>
+                </div>
+                <div class="d-flex h-50 mt-4">
+                    <div class="block article-2">
+                        <h2>Article 2</h2>
+                        <button class="mt-1 classic-btn">En savoir plus</button>
+                    </div>
+                </div>
+                <div class="d-flex h-50 mt-4">
+                    <div class="block article-3">
+                        <h2>Article 3</h2>
+                        <button class="mt-1 classic-btn">En savoir plus</button>
                     </div>
                 </div>
                 {{--<div class="row mt-3">--}}
