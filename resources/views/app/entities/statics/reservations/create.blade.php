@@ -29,11 +29,51 @@
             </div>
         </div>
         <div class="content-page">
-            <div class="home galerie">
+            <div class="home galerie resa">
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
                             <h1>Réservation</h1>
+                            <div class="row w-75">
+                                <div class="col-md-6">
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        <label for="exampleInputEmail1" class="text-white">Adresse email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        {{--<label for="exampleInputEmail1" class="text-white">Nom</label>--}}
+                                        {{--<input type="text" class="form-control">--}}
+                                        <button class="classic-btn co text-center">Connexion</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        <label for="exampleInputEmail1" class="text-white">Nom</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        <label for="exampleInputEmail1" class="text-white">Prénom</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        <label for="exampleInputEmail1" class="text-white">Adresse email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between">
+                                        {{--<label for="exampleInputEmail1" class="text-white">Nom</label>--}}
+                                        {{--<input type="text" class="form-control">--}}
+                                        <button class="classic-btn inscri text-center">Inscription</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

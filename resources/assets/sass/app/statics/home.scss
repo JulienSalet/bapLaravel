@@ -63,6 +63,24 @@ button{
             }
         }
 
+        &.resa{
+            padding: 90px 0px 90px;
+            .form-group{
+                label{
+                    padding-left: 30px;
+                }
+                input{
+                    width: 65%;
+                }
+                .co{
+                    margin-left: 160px;
+                }
+                .inscri{
+                    margin-left: 170px;
+                }
+            }
+        }
+
         &.temoignages{
             background-color: #7789a2;
             background-image: none;
