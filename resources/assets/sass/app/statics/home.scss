@@ -35,7 +35,7 @@ button{
     top: 0px;
     width: 7%;
     background-color: #414143;
-    height: 251%;
+    height: 263%;
     .content-sidebar {
         margin-top: 111px;
         img {
@@ -278,4 +278,15 @@ button{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.page-content{
+    height: 248vh;
+}
+
+footer{
+    a{
+        color: white;
+
+    }
 }

@@ -6,28 +6,7 @@
 
 @section('content')
     <div class="">
-        <div class="sidebar">
-            <div class="content-sidebar d-flex flex-column justify-content-center align-items-center">
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-            </div>
-        </div>
+        @include('app.partials.sidebar')
         <div class="content-page">
             <div class="home acces">
                 <div class="container-fluid px-0 mx-0">

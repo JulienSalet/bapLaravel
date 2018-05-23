@@ -2,32 +2,12 @@
 
 
 @section('css')
+    <link rel="stylesheet" href="login.css">
 @stop
 
 @section('content')
-    <div class="">
-        <div class="sidebar">
-            <div class="content-sidebar d-flex flex-column justify-content-center align-items-center">
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-                <div class="mt-4">
-                    <img src="{{ asset('images/icons/compass.png') }}" alt="">
-                </div>
-            </div>
-        </div>
+    <div class="page-content">
+        @include('app.partials.sidebar')
         <div class="content-page">
             <div class="home">
                 <div class="container-fluid px-0 mx-0">
@@ -90,4 +70,10 @@
 @stop
 
 @section('js')
+    <script>
+        
+        $(document).ready(function(){
+            console.log('here')
+        });
+    </script>
 @stop

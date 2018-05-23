@@ -7,7 +7,7 @@
             <a href="" class="nav-link">Blog</a>
         </li>
         <li class="nav-item">
-            <a href="{{ action('App\StaticsController@home') }}" class="nav-link"><img height="75" src="{{ asset('images/logo.png') }}" alt=""></a>
+            <a href="{{ action('App\StaticsController@home') }}" class="nav-link"><img height="75" src="{{ asset('images/logo-2.png') }}" alt=""></a>
         </li>
         <li class="nav-item">
             <a href="{{ action('App\StaticsController@showGaleries') }}" class="nav-link">Galerie</a>
