@@ -283,7 +283,7 @@
                 <li class="" id="folders">
                     {{-- Avoid waiting --}}
                     @foreach($page->getCategories AS $category)
-                        <a href="{{ action('Admin\Cms\BlocksController@showBlocks', [$page->id, $category->slug]) }}" class="singleFolder"
+                        <a href="#" class="singleFolder"
                            data-id="{{ $category->id }}">
                     <span class="title">
                     <i class="pg-folder"></i>
@@ -309,38 +309,28 @@
         <div class="inner-content full-height">
             <div class="split-view">
                 
-                <div style="display: none;" id="list" class="split-list">
+                <div style="" id="list" class="split-list">
                     <div data-email="list" class="boreded no-top-border list-view">
                         <h2 class="list-view-fake-header">
-                            Dossier: <strong id="currentFolder">{{ $page->title }}</strong>
+                            Dossier: <strong id="currentFolder">{{$category->name}}</strong>
                             {{-- TODO --}}
                         </h2>
                         <div style="position: absolute; right:10px; z-index:999">
-                            <form action="#">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="folder" required>
-                                <button>
-                                    <i class="fa fa-times"></i>
-                                </button>
+                            <a href="{{ action('Admin\Cms\BlocksController@show', $page->id) }}">
+                                <i class="fa fa-times"></i>
+                            </a>
                             </form>
                         </div>
-                        <div class="list-view-wrapper">
-                            <div class="list-view-group-container">
-                                <ul class="no-padding" id="blocks">
-                                </ul>
-                            </div>
-                        </div>
+                        @include('admin.entities.cms.pages.partials.listBlock', $blocks)
                     </div>
                 </div>
                 
-                <div id="details" class="split-details" style="display: none;">
+                <div id="details" class="split-details" style="">
                     <div class="email-content-wrapper">
                         <div class="actions-wrapper menuclipper bg-master-lightest">
                             <ul class="actions menuclipper-menu no-margin p-l-20">
                                 <li class="no-padding">
-                                    <a href="#" class="text-danger">
-                                        Supprimer ce bloc
-                                    </a>
+                                
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
@@ -348,35 +338,33 @@
                         <div class="email-content">
                             <div class="email-content-header">
                                 <div class="thumbnail-wrapper d48 circular">
-                                    <i class="pg-text_style"></i>
                                 </div>
                                 <div class="sender inline m-l-10">
-                                    <p class="name no-margin bold" id="currentBlockKey"></p>
-                                    <p class="datetime no-margin">Dernière mise à jour :
-                                        <span id="currentBlockTime"></span>
+                                    
+                                    <p class="datetime no-margin">Dernière mise à jour : {{ $block->created_at }}
                                     </p>
                                 </div>
+                                <form action="">
+                                    <div class="d-flex flex-column mt-3">
+                                        <div class="form-group form-group-default">
+                                            <label for="">La clé</label>
+                                            <input class="form-control" type="text" name="key"
+                                                   value="{{ $block->key }}">
+                                        </div>
+                                        <div class="form-group form-group-default">
+                                            <label for="">La valeur</label>
+                                            <textarea name="value" id="" class="form-control" cols="30"
+                                                      rows="10">{!! $block->value  !!}</textarea>
+                                        </div>
+                                        <div class="">
+                                            <button type="submit" class="btn btn-success">Modifier le block</button>
+                                            <div class="btn btn-danger">Supprimer le block</div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <div class="clearfix"></div>
-                            <div class="email-content-body m-t-20">
-                            </div>
-                            <div class="b-a b-grey m-t-30">
-                                {{--<form action="{{ action('Admin\Cms\BlocksController@updateBlock', $page->id) }}"--}}
-                                {{--id="currentBlockText" style="display: none" method="post">--}}
-                                {{--{{ csrf_field() }}--}}
-                                {{--<input type="hidden" name="block" id="currentBlockIdValue">--}}
-                                {{--<textarea class="form-control" placeholder="Valeur" name="value"--}}
-                                {{--id="currentBlockTextValue"></textarea>--}}
-                                {{--</form>--}}
-                                {{--<form action="{{ action('Admin\Cms\BlocksController@updateBlock', $page->id) }}"--}}
-                                {{--id="currentBlockImage" style="display: none" method="post"--}}
-                                {{--enctype="multipart/form-data">--}}
-                                {{--{{ csrf_field() }}--}}
-                                {{--<input type="hidden" name="block" id="currentBlockIdValueForImage">--}}
-                                {{--<input type="file" name="image" id="currentBlockImageValue">--}}
-                                {{--<button type="submit" class="btn btn-primary">Envoyer</button>--}}
-                                {{--</form>--}}
-                            </div>
+                        
                         </div>
                     </div>
                 </div>
