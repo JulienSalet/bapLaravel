@@ -22,7 +22,7 @@ Route::group(['prefix' => '', 'namespace' => 'App'], function(){
     Route::get('/logements', ['uses' => 'StaticsController@showLogement']);
     Route::get('/reservation', ['uses' => 'StaticsController@showReservation']);
     Route::get('/acces', ['uses' => 'StaticsController@showAcces']);
-    
+    Route::get('/blog', ['uses' => 'StaticsController@showBlog']);
 });
 
 //ADMIN

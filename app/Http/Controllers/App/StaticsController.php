@@ -13,7 +13,14 @@ class StaticsController extends Controller
     public function home(Request $request)
     {
         return view(self::PATH_VIEW . 'home')->with([
-        
+
+        ]);
+    }
+
+    public function showBlog(Request $request)
+    {
+        return view(self::PATH_VIEW . 'blog')->with([
+
         ]);
     }
     

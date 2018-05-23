@@ -4,7 +4,7 @@
             <a href="{{ action('App\StaticsController@showReservation') }}" class="nav-link">Réservation</a>
         </li>
         <li class="nav-item">
-            <a href="" class="nav-link">Blog</a>
+            <a href="{{ action('App\StaticsController@showBlog') }}" class="nav-link">Blog</a>
         </li>
         <li class="nav-item">
             <a href="{{ action('App\StaticsController@home') }}" class="nav-link"><img height="75" src="{{ asset('images/logo-2.png') }}" alt=""></a>
