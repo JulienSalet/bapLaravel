@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 class BlocksController extends Controller
 {
     
-    const CONTROLLER = 'Admin\Cms\BlockController@';
+    const CONTROLLER = 'Admin\Cms\BlocksController@';
     public function show(Request $request,$id)
     {
         $page = Pages::where('id', $id)->first();
@@ -54,25 +54,21 @@ class BlocksController extends Controller
     public function showBlocks(Request $request, $id, $slug)
     {
         $page = Pages::where('id', $id)->first();
-        
-        $category = BlockCategory::where('slug', $slug)->first();
+        $category = $page->getCategories;
         return view('admin.entities.cms.pages.blocks.showBlock')->with([
             'page' => $page,
             'category' => $category,
-            'blocks' => $category->getBlocks
         ]);
     }
     
     public function showBlocksDetails(Request $request, $id, $slug, $blockId)
     {
         $page = Pages::where('id', $id)->first();
-    
-        $category = BlockCategory::where('slug', $slug)->first();
+        $category = $page->getCategories;
         $block = Block::where('id', $blockId)->first();
         return view('admin.entities.cms.pages.blocks.showBlockDetails')->with([
             'page' => $page,
             'category' => $category,
-            'blocks' => $category->getBlocks,
             'block' => $block
         ]);
     }
@@ -94,7 +90,7 @@ class BlocksController extends Controller
         $block = Block::where('id', $id)->first();
         $block->delete();
         
-        return redirect()->action(self::CONTROLLER . '');   x
+        return redirect()->action(self::CONTROLLER . 'showBlocks', [$id, $request->slug]);
         
     }
 }

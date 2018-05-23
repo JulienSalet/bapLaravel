@@ -24,7 +24,6 @@ class Pages extends Model
     {
         return $this->belongsTo(File::class, 'og_image', 'id');
     }
-    
     public function getCategories()
     {
         return $this->hasMany(BlockCategory::class, 'fk_page_id', 'id');

@@ -294,8 +294,8 @@
                     @endforeach
                 </li>
             </ul>
-            <p class="menu-title m-t-20 all-caps">Les autres pages</p>
-            <ul class="sub-menu no-padding">
+            {{--<p class="menu-title m-t-20 all-caps">Les autres pages</p>--}}
+            {{--<ul class="sub-menu no-padding">--}}
                 {{--@foreach($pages AS $children)--}}
                 {{--<li>--}}
                 {{--<a href="{{ action('Admin\Cms\BlocksController@index', $children->id) }}">--}}
@@ -303,7 +303,7 @@
                 {{--</a>--}}
                 {{--</li>--}}
                 {{--@endforeach--}}
-            </ul>
+            {{--</ul>--}}
         </nav>
         
         <div class="inner-content full-height">

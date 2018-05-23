@@ -294,16 +294,16 @@
                     @endforeach
                 </li>
             </ul>
-            <p class="menu-title m-t-20 all-caps">Les autres pages</p>
-            <ul class="sub-menu no-padding">
-                {{--@foreach($pages AS $children)--}}
-                {{--<li>--}}
-                {{--<a href="{{ action('Admin\Cms\BlocksController@index', $children->id) }}">--}}
-                {{--<span class="title">{{ $children->title }}</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--@endforeach--}}
-            </ul>
+            {{--<p class="menu-title m-t-20 all-caps">Les autres pages</p>--}}
+            {{--<ul class="sub-menu no-padding">--}}
+            {{--@foreach($pages AS $children)--}}
+            {{--<li>--}}
+            {{--<a href="{{ action('Admin\Cms\BlocksController@index', $children->id) }}">--}}
+            {{--<span class="title">{{ $children->title }}</span>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            {{--@endforeach--}}
+            {{--</ul>--}}
         </nav>
         
         <div class="inner-content full-height">
@@ -321,7 +321,7 @@
                             </a>
                             </form>
                         </div>
-                        @include('admin.entities.cms.pages.partials.listBlock', $blocks)
+                        @include('admin.entities.cms.pages.partials.listBlock', [$blocks = $category->getBlocks])
                     </div>
                 </div>
                 

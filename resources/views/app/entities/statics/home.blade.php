@@ -13,8 +13,8 @@
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
-                            <h1>L'Ecollectif Briand</h1>
-                            <button class="mt-5 classic-btn">En savoir plus</button>
+                            <h1>{{ getTexts('home-first-section-head-title') }}</h1>
+                            <button class="mt-5 classic-btn">{{ getTexts("home-second-section-first-block") }}</button>
                         </div>
                     </div>
                 </div>

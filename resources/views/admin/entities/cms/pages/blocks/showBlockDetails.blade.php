@@ -294,16 +294,16 @@
                     @endforeach
                 </li>
             </ul>
-            <p class="menu-title m-t-20 all-caps">Les autres pages</p>
-            <ul class="sub-menu no-padding">
-                {{--@foreach($pages AS $children)--}}
-                {{--<li>--}}
-                {{--<a href="{{ action('Admin\Cms\BlocksController@index', $children->id) }}">--}}
-                {{--<span class="title">{{ $children->title }}</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--@endforeach--}}
-            </ul>
+            {{--<p class="menu-title m-t-20 all-caps">Les autres pages</p>--}}
+            {{--<ul class="sub-menu no-padding">--}}
+            {{--@foreach($pages AS $children)--}}
+            {{--<li>--}}
+            {{--<a href="{{ action('Admin\Cms\BlocksController@index', $children->id) }}">--}}
+            {{--<span class="title">{{ $children->title }}</span>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            {{--@endforeach--}}
+            {{--</ul>--}}
         </nav>
         
         <div class="inner-content full-height">
@@ -321,20 +321,12 @@
                             </a>
                             </form>
                         </div>
-                        @include('admin.entities.cms.pages.partials.listBlock', $blocks)
+                        @include('admin.entities.cms.pages.partials.listBlock', [$blocks = $category->getBlocks])
                     </div>
                 </div>
                 
                 <div id="details" class="split-details" style="">
                     <div class="email-content-wrapper">
-                        <div class="actions-wrapper menuclipper bg-master-lightest">
-                            <ul class="actions menuclipper-menu no-margin p-l-20">
-                                <li class="no-padding">
-                                
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
                         <div class="email-content">
                             <div class="email-content-header">
                                 <div class="thumbnail-wrapper d48 circular">
@@ -362,6 +354,11 @@
                                             
                                         </div>
                                     </div>
+                                </form>
+                                <form action="{{action('Admin\Cms\BlocksController@deleteBlock', $block->id)}}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="slug" value="{{ $category->slug }}">
+                                    <button type="submit" class="ml-5 mt-2 btn btn-danger">Supprimer le block</button>
                                 </form>
                             </div>
                             <div class="clearfix"></div>
