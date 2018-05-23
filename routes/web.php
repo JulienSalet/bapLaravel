@@ -14,6 +14,11 @@
 
 
 Auth::routes();
+Route::get('/logout',function (){
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect()->back();
+});
+
 
 //APP
 Route::group(['prefix' => '', 'namespace' => 'App'], function(){
@@ -26,9 +31,17 @@ Route::group(['prefix' => '', 'namespace' => 'App'], function(){
 });
 
 //ADMIN
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
+    Route::get('/', ['uses' => 'DashboardController@dashboard']);
+    Route::post('passowrd/modify', ['uses' => 'AccountController@store']);
+    Route::resources( [
+        'users'        => 'Cms\UsersController',
+        'pages'        => 'Cms\PagesController',
+    ] );
+});
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
     Route::get('login', ['uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['uses' => 'Auth\LoginController@login']);
     Route::get('logout', ['uses' => 'Auth\LoginController@logout']);
-    Route::get('/', ['uses' => 'DashboardController@dashboard']);
 });

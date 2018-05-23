@@ -18,7 +18,7 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <span class="title">First Section</span>
+                    <span class="title">Utilisateurs</span>
                     <span class="arrow"></span>
                 </a>
                 <span class="icon-thumbnail">
@@ -26,18 +26,18 @@
                 </span>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">First Lien</a>
+                        <a href="{{ action('Admin\Cms\UsersController@index') }}">Tout les utilisateurs</a>
                         <span class="icon-thumbnail">utls</span>
                     </li>
-                    <li>
-                        <a href="">Second Lien</a>
-                        <span class="icon-thumbnail">rls</span>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="">Second Lien</a>--}}
+                        {{--<span class="icon-thumbnail">rls</span>--}}
+                    {{--</li>--}}
                 </ul>
             </li>
             <li>
                 <a href="javascript:;">
-                    <span class="title">Second Section</span>
+                    <span class="title">Pages</span>
                     <span class="arrow"></span>
                 </a>
                 <span class="icon-thumbnail">
@@ -45,8 +45,8 @@
                 </span>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">First Lien</a>
-                        <span class="icon-thumbnail">ofr</span>
+                        <a href="">Toutes les pages</a>
+                        <span class="icon-thumbnail">pgs</span>
                     </li>
                 </ul>
             </li>
