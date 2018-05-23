@@ -14,4 +14,14 @@ class Pages extends Model
     {
         return $this->hasMany(Block::class, 'fk_page_id', 'id');
     }
+    
+    public function getImage()
+    {
+        return $this->belongsTo(File::class, 'fk_image_id', 'id');
+    }
+    
+    public function getOgImage()
+    {
+        return $this->belongsTo(File::class, 'og_image', 'id');
+    }
 }

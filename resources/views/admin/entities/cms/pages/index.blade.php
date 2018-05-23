@@ -78,7 +78,7 @@
                                     {{--@permission('create-cms-events')--}}
                                     <a href="{{ action('Admin\Cms\PagesController@create') }}"
                                     class="btn btn-primary btn-cons m-t-10">
-                                    Ajouter une pages
+                                    Ajouter une page
                                     </a>
                                     {{--@endpermission--}}
                                 </div>
@@ -107,14 +107,13 @@
                         <tr>
                             <th style="width:10%;">#</th>
                             <th>Titre</th>
-                            <th>Url</th>
+                            <th>Description</th>
                             <th>Date</th>
                             <th style="width:20%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($pages AS $key => $page)
-                        
                             <tr>
                                 <td style="width:10%;" class="v-align-middle">
                                     {{ $key+1 }}
@@ -123,22 +122,20 @@
                                     {{ $page->title ? $page->title : '—' }}
                                 </td>
                                 <td class="v-align-middle">
-                                    {{ $page->url ? $page->url : '—' }}
+                                    {{ $page->content ? $page->content : '—' }}
                                 </td>
                                 <td class="v-align-middle">
                                     {{ $page->created_at ? \Carbon\Carbon::parse($page->created_at)->format('m/d/Y'): '—' }}
                                 </td>
-                                <td style="width:20%" class="v-align-middle">
+                                <td style="display: flex;" class="v-align-middle">
                                     <a href="{{ action('Admin\Cms\PagesController@edit', $page->id) }}"
-                                       class="btn btn-primary" style="display: inline-block;vertical-align: top;">
+                                       class="btn btn-primary">
                                         Modifier
                                     </a>
                                     <form action="{{ action('Admin\Cms\PagesController@destroy', $page->id) }}" method="POST">
                                         <input type="hidden" value="DELETE" name="_method">
                                         {{ csrf_field() }}
-                                        <button type="submit"
-                                                class="delete btn btn btn-danger"
-                                                style="display: inline-block;vertical-align: top;">
+                                        <button type="submit" class="delete btn btn btn-danger">
                                             Supprimer
                                         </button>
                                     </form>
