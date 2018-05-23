@@ -8,10 +8,15 @@
                         </div>
                         <div class="inline m-l-15">
                             <span><strong>Clé :</strong>{{ $block->key }}</span>
+                            <br>
+                            <span><strong>Valeur :</strong></span>
                             <p class="recipients no-margin hint-text small">
                                 {{ $block->value }}
                             </p>
+                            <span><strong>Type :</strong>{{ $block->type }}</span>
+
                         </div>
+                        
                         <div class="clearfix"></div>
                     </a>
                 </li>

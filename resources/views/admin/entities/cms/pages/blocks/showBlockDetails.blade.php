@@ -344,7 +344,8 @@
                                     <p class="datetime no-margin">Dernière mise à jour : {{ $block->created_at }}
                                     </p>
                                 </div>
-                                <form action="">
+                                <form action="{{ action('Admin\Cms\BlocksController@updateBlock', $block->id)}}" method="POST">
+                                    {{ csrf_field() }}
                                     <div class="d-flex flex-column mt-3">
                                         <div class="form-group form-group-default">
                                             <label for="">La clé</label>
@@ -358,7 +359,7 @@
                                         </div>
                                         <div class="">
                                             <button type="submit" class="btn btn-success">Modifier le block</button>
-                                            <div class="btn btn-danger">Supprimer le block</div>
+                                            
                                         </div>
                                     </div>
                                 </form>

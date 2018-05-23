@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     ] );
     
     Route::get('block/pages/{id}', 'Cms\BlocksController@show');
+    Route::post('block/update/block/{id}', 'Cms\BlocksController@updateBlock');
     Route::post('block/pages/submit/block/{id}', 'Cms\BlocksController@createBlock');
     Route::post('block/pages/submit/folder/{id}', 'Cms\BlocksController@createFolder');
     Route::get('block/pages/folder/block/{id}/{slug}', 'Cms\BlocksController@showBlocks');

@@ -12,6 +12,8 @@ use App\Http\Controllers\Controller;
 
 class BlocksController extends Controller
 {
+    
+    const CONTROLLER = 'Admin\Cms\BlockController@';
     public function show(Request $request,$id)
     {
         $page = Pages::where('id', $id)->first();
@@ -73,5 +75,26 @@ class BlocksController extends Controller
             'blocks' => $category->getBlocks,
             'block' => $block
         ]);
+    }
+    
+    public function updateBlock(Request $request, $id)
+    {
+        $block = Block::where('id', $id)->first();
+        
+        $block->key = $request->key;
+        $block->value = $request->value;
+        $block->save();
+        
+        return redirect()->back();
+        
+    }
+    
+    public function deleteBlock(Request $request, $id)
+    {
+        $block = Block::where('id', $id)->first();
+        $block->delete();
+        
+        return redirect()->action(self::CONTROLLER . '');   x
+        
     }
 }
