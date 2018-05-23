@@ -38,6 +38,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
         'users'        => 'Cms\UsersController',
         'pages'        => 'Cms\PagesController',
     ] );
+    
+    Route::get('block/pages/{id}', 'Cms\BlocksController@show');
+    Route::post('block/pages/submit/block/{id}', 'Cms\BlocksController@createBlock');
+    Route::post('block/pages/submit/folder/{id}', 'Cms\BlocksController@createFolder');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){

@@ -176,6 +176,11 @@ class PagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Pages::where('id', $id)->first();
+    
+        $user->delete();
+    
+        return redirect()->action('Admin\Cms\PagesController@index')->with('success', 'Page supprimée avec succès');
+    
     }
 }

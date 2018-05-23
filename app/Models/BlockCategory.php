@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlockCategory extends Model
 {
-    protected $table = "cms_block_categories";
+    protected $table = "cms_blocks_categories";
     
     protected $guarded = [];
     

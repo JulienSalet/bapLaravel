@@ -128,8 +128,12 @@
                                     {{ $page->created_at ? \Carbon\Carbon::parse($page->created_at)->format('m/d/Y'): '—' }}
                                 </td>
                                 <td style="display: flex;" class="v-align-middle">
+                                    <a href="{{ action('Admin\Cms\BlocksController@show', $page->id) }}"
+                                       class="btn btn-primary mr-3">
+                                        Voir les textes
+                                    </a>
                                     <a href="{{ action('Admin\Cms\PagesController@edit', $page->id) }}"
-                                       class="btn btn-primary">
+                                       class="btn btn-primary mr-3">
                                         Modifier
                                     </a>
                                     <form action="{{ action('Admin\Cms\PagesController@destroy', $page->id) }}" method="POST">
