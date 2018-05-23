@@ -18,7 +18,7 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <span class="title">First Section</span>
+                    <span class="title">Utilisateurs</span>
                     <span class="arrow"></span>
                 </a>
                 <span class="icon-thumbnail">
@@ -26,18 +26,37 @@
                 </span>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">First Lien</a>
+                        <a href="{{ action('Admin\Cms\UsersController@index') }}">Tout les utilisateurs</a>
                         <span class="icon-thumbnail">utls</span>
                     </li>
+                    {{--<li>--}}
+                        {{--<a href="">Second Lien</a>--}}
+                        {{--<span class="icon-thumbnail">rls</span>--}}
+                    {{--</li>--}}
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="title">Pages</span>
+                    <span class="arrow"></span>
+                </a>
+                <span class="icon-thumbnail">
+                    <i class="fa fa-user"></i>
+                </span>
+                <ul class="sub-menu">
                     <li>
-                        <a href="">Second Lien</a>
-                        <span class="icon-thumbnail">rls</span>
+                        <a href="{{ action('Admin\Cms\PagesController@create') }}">Ajouter une page</a>
+                        <span class="icon-thumbnail">pgs</span>
+                    </li>
+                    <li>
+                        <a href="{{ action('Admin\Cms\PagesController@index') }}">Toutes les pages</a>
+                        <span class="icon-thumbnail">pgs</span>
                     </li>
                 </ul>
             </li>
             <li>
                 <a href="javascript:;">
-                    <span class="title">Second Section</span>
+                    <span class="title">Salle</span>
                     <span class="arrow"></span>
                 </a>
                 <span class="icon-thumbnail">
@@ -45,38 +64,57 @@
                 </span>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">First Lien</a>
-                        <span class="icon-thumbnail">ofr</span>
+                        <a href="{{ action('Admin\Cms\PagesController@create') }}">Ajouter une salle</a>
+                        <span class="icon-thumbnail">pgs</span>
+                    </li>
+                    <li>
+                        <a href="{{ action('Admin\Cms\PagesController@index') }}">Toutes les salles</a>
+                        <span class="icon-thumbnail">pgs</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="title">Réservations</span>
+                    <span class="arrow"></span>
+                </a>
+                <span class="icon-thumbnail">
+                    <i class="fa fa-user"></i>
+                </span>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="{{ action('Admin\Cms\PagesController@index') }}">Toutes les réservations</a>
+                        <span class="icon-thumbnail">pgs</span>
                     </li>
                 </ul>
             </li>
             {{--//GROUP QUESTION--}}
-            <li>
-                <a href="javascript:;">
-                    <span class="title">Multi Menu</span>
-                    <span class="arrow"></span>
-                </a>
-                <span class="icon-thumbnail">
-                    <i class="fa fa-user"></i>
-                </span>
-                
-                <ul class="sub-menu">
-                    <li class="">
-                        <a href="javascript:;" class="w-100"><span class="title">Sub Menu</span>
-                            <span class="arrow"></span></a>
-                        <ul class="sub-menu" style="display: none;">
-                            <li>
-                                <a href="">Sub First Link</a>
-                                <span class="icon-thumbnail">Sm</span>
-                            </li>
-                            <li>
-                                <a href="">Sub Second Link</a>
-                                <span class="icon-thumbnail">Sm</span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+            {{--<li>--}}
+                {{--<a href="javascript:;">--}}
+                    {{--<span class="title">Multi Menu</span>--}}
+                    {{--<span class="arrow"></span>--}}
+                {{--</a>--}}
+                {{--<span class="icon-thumbnail">--}}
+                    {{--<i class="fa fa-user"></i>--}}
+                {{--</span>--}}
+                {{----}}
+                {{--<ul class="sub-menu">--}}
+                    {{--<li class="">--}}
+                        {{--<a href="javascript:;" class="w-100"><span class="title">Sub Menu</span>--}}
+                            {{--<span class="arrow"></span></a>--}}
+                        {{--<ul class="sub-menu" style="display: none;">--}}
+                            {{--<li>--}}
+                                {{--<a href="">Sub First Link</a>--}}
+                                {{--<span class="icon-thumbnail">Sm</span>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="">Sub Second Link</a>--}}
+                                {{--<span class="icon-thumbnail">Sm</span>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
         </ul>
         <div class="clearfix"></div>
     </div>

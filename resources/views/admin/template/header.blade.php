@@ -34,5 +34,10 @@
     <link href="{{ asset('plugins/ckeditor/toolbarconfigurator/lib/codemirror/neo.css') }}" rel="stylesheet" type="text/css">
     <link class="main-stylesheet" href="{{ asset('pages-assets/pages/css/themes/corporate.css') }}" rel="stylesheet" type="text/css">
     @yield('css')
+    <style>
+        .content{
+        
+        }
+    </style>
 </head>
 <body class="fixed-header menu-pin menu-behind pace-done">

@@ -24,8 +24,14 @@ class StaticsController extends Controller
         ]);
     }
     
+    
     public function showGaleries(Request $request)
     {
+        
+        for ($i = 1; $i <= 10; $i++){
+            "J'adore $i";
+        }
+        
         return view(self::PATH_VIEW . 'galeries')->with([
     
         ]);
