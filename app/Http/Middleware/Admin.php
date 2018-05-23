@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
@@ -16,14 +17,13 @@ class Admin
     public function handle($request, Closure $next, $guard = null)
     {
         if (!Auth::guard($guard)->check()) {
-            return redirect(app()->getLocale().'/admin/login');
+            return redirect('/admin/login');
+        }
+        if (!Auth::user()->is_admin){
+            return redirect()->back();
         }
     
-        if($request->user()->canAccessToAdmin()){
-            return $next($request);
-        }
-    
-        return redirect('/');
-        //return $next($request);
+        //return redirect('/admin');
+        return $next($request);
     }
 }
