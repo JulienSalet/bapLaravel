@@ -4,6 +4,7 @@
         <div class="">
             <div class="brand inline m-l-10">
                 <a href="{{ action('Admin\DashboardController@dashboard') }}">
+                    <img src="{{asset('images/logo-2.png')}}" alt="" width="150px">
                 </a>
             </div>
         </div>
