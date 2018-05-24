@@ -1,9 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
-/public/css
+/public/css/*.css
 /public/.DS_Store
-/public/js
+/public/js/*.js
 /storage/*.key
 /vendor
 /.idea
