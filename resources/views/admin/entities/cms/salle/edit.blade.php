@@ -10,11 +10,26 @@
     <link href="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
           type="text/css"
           media="screen">
+    <link media="screen" type="text/css" rel="stylesheet"
+          href="{{ asset('pages-assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}">
+    <link href="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
+          type="text/css" media="screen">
 @stop
 @section('js')
+    <script type="text/javascript"
+            src="{{ asset('pages-assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
+    <script src="{{ asset('pages-assets/plugins/classie/classie.js') }}" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             $('select').select2();
+            $('.time').timepicker({
+                showMeridian: false
+            }).on('show.timepicker', function (e) {
+                var widget = $('.bootstrap-timepicker-widget');
+                widget.find('.glyphicon-chevron-up').removeClass().addClass('pg-arrow_maximize');
+                widget.find('.glyphicon-chevron-down').removeClass().addClass('pg-arrow_minimize');
+            });
         });
 
         $('[name="seo_title"]').on('keyup', function () {
@@ -102,7 +117,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{ action('Admin\Cms\Blog\PostController@index') }}">Tout les articles</a>
                 </li>
-                <li class="breadcrumb-item active">Ajouter une salle</li>
+                <li class="breadcrumb-item active">Modifier une salle</li>
             </ol>
             <form action="{{ action('Admin\Cms\SalleController@update', $salle) }}" method="POST"
                   data-toggle="validator"
@@ -110,7 +125,7 @@
                 {{ csrf_field() }}
                 {{ method_field('put') }}
                 <div class="row">
-                    <div class="col-xl-8 col-lg-8 ">
+                    <div class="col-xl-12 col-lg-12 ">
                         <div class="card card-white">
                             <div class="card-header">
                                 <div class="card-title">
@@ -151,7 +166,7 @@
                                     </div>
                                 </div>
                                 <div class="row clearfix">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('nb_people') ? 'has-error' : '' }} form-group-default required"
                                              aria-required="true">
                                             <label>Nombre de personne max de la salle</label>
@@ -166,19 +181,97 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group {{ $errors->has('horraire') ? 'has-error' : '' }} form-group-default required"
-                                             aria-required="true">
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-12">
+                                        <div class="form-input-group flex-1 bootstrap-timepicker">
                                             <label>Horraire de la salle</label>
-                                            <input type="number" class="form-control" name="horraire"
-                                                   value="{{ $salle->horraire }}"
-                                                   placeholder="Horraire de la salle"
-                                                   required>
-                                            @if ($errors->has('horraire'))
-                                                <div class="help-block">
-                                                    <strong>{{ $errors->first('horraire') }}</strong>
+                                            <div class="d-flex align-items-center justify-content-around">
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Lundi</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[lundi][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[lundi][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
                                                 </div>
-                                            @endif
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Mardi</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[mardi][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[mardi][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Mercredi</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[mercredi][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[mercredi][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Jeudi</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[jeudi][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[jeudi][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Vendredi</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[vendredi][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[vendredi][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Samedi</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[samedi][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[samedi][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <label class="">Dimanche</label>
+                                                    <div class="d-flex">
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[dimanche][start_time]"
+                                                               value="{{ old('start_time') }}">
+                                                        <div class="input-group-addon">to</div>
+                                                        <input type="text" class="time form-control"
+                                                               name="horaire[dimanche][end_time]"
+                                                               value="{{ old('end_time') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -215,17 +308,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card card-white">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-white" style="width: 100%;">
                             <div class="card-header ">
                                 <div class="card-title">
                                     Photo acutelle
                                 </div>
                             </div>
                             <div class="card-block">
-                                <img src="{{ $salle->getFile->file }}" width="300px" alt="">
+                                <img src="{{ $salle->getFile ? $salle->getFile->file : 'Pas d\'image' }}" width="300px"
+                                     alt="">
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="card card-transparent">
                             <div class="card-header ">
                                 <div class="card-title">

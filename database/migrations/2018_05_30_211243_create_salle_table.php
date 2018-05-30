@@ -18,7 +18,7 @@ class CreateSalleTable extends Migration
             $table->string('titre')->nullable();
             $table->integer('numero_salle')->nullable();
             $table->string('slug')->nullable();
-            $table->longText('horraire')->nullabel();
+            $table->longText('horraire')->nullable();
             $table->integer('nb_people')->nullable();
             $table->longText('content');
             $table->integer('fk_file_id')->on('id')->reference('files')->nullable();

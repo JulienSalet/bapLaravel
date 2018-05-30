@@ -129,14 +129,16 @@
                                     {{ $salle->nb_people ? $salle->nb_people : '—' }}
                                 </td>
                                 <td class="v-align-middle semi-bold">
-                                    {{ $salle->horraire ? $salle->horraire : '—' }}
+                                    <a href="#" class="btn btn-primary" data-toggle="modal"
+                                       data-target="#exampleModalLong-{{ $key }}">Voir les horraires</a>
                                 </td>
                                 <td style="display: flex;" class="v-align-middle">
                                     <a href="{{ action('Admin\Cms\SalleController@edit', $salle->id) }}"
                                        class="btn btn-primary mr-3">
                                         Modifier
                                     </a>
-                                    <form action="{{ action('Admin\Cms\SalleController@destroy', $salle->id) }}" method="POST">
+                                    <form action="{{ action('Admin\Cms\SalleController@destroy', $salle->id) }}"
+                                          method="POST">
                                         <input type="hidden" value="DELETE" name="_method">
                                         {{ csrf_field() }}
                                         <button type="submit" class="delete btn btn btn-danger">
@@ -152,4 +154,41 @@
             </div>
         </div>
     </div>
+    @foreach($salles as $key => $salle)
+        <div class="modal fade" id="exampleModalLong-{{ $key }}" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Horaire de la salle
+                            <strong>{{ $salle->numero_salle }}</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @if($salle->horraire != null)
+                            <div class="d-flex flex-column mt-3">
+                                @foreach(json_decode($salle->horraire) as $day => $horraire)
+                                    {{--{{ dd($day, $horraire) }}--}}
+                                    <div class="d-flex flex-wrap mb-3">
+                                        
+                                        <span class="pr-2"><strong class="text-uppercase">{{ $day }} : </strong></span>
+                                        @foreach($horraire as $key => $value)
+                                            <div class="pr-2">
+                                                {{ $key === 'start_time' ? "Heure d'ouverture" : "Heure de fermeture" }}
+                                                : {{ $value }}
+                                            </div>
+                                        
+                                        @endforeach
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @stop

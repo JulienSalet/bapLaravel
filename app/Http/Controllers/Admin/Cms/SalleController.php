@@ -53,7 +53,6 @@ class SalleController extends Controller
             $salle->titre = $request->title;
             $salle->slug = str_slug($request->title);
         }
-        
         if (request()->has('numero_salle') && $request->numero_salle != null) {
             $salle->numero_salle = $request->numero_salle;
         }
@@ -66,8 +65,8 @@ class SalleController extends Controller
             $salle->content = $request->get('content');
         }
         
-        if (request()->has('horraire') && $request->get('horraire') != null) {
-            $salle->horraire = $request->get('horraire');
+        if (request()->has('horaire')) {
+            $salle->horraire = json_encode($request->horaire);
         }
     
         if (request()->has('file')) {
@@ -94,8 +93,8 @@ class SalleController extends Controller
     
         request()->validate([
             'title'        => 'required|string',
-            'numero_salle' => 'required|integer',
-            'nb_people'    => 'required|integer',
+            'numero_salle' => 'required',
+            'nb_people'    => 'required',
             'content'      => 'required',
         ]);
         
@@ -118,8 +117,8 @@ class SalleController extends Controller
             $salle->content = $request->get('content');
         }
     
-        if (request()->has('horraire') && $request->get('horraire') != null) {
-            $salle->horraire = $request->get('horraire');
+        if (request()->has('horaire')) {
+            $salle->horraire = json_encode($request->horaire);
         }
     
         if (request()->has('file')) {
