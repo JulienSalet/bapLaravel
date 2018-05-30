@@ -279,7 +279,7 @@
                         </span>
                     </a>
                 </li>
-                
+    
                 <li class="" id="folders">
                     {{-- Avoid waiting --}}
                     @foreach($page->getCategories AS $category)

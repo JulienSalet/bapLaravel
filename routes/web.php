@@ -12,16 +12,16 @@
 */
 
 
-
 Auth::routes();
-Route::get('/logout',function (){
+Route::get('/logout', function () {
     \Illuminate\Support\Facades\Auth::logout();
+    
     return redirect()->back();
 });
 
 
 //APP
-Route::group(['prefix' => '', 'namespace' => 'App'], function(){
+Route::group(['prefix' => '', 'namespace' => 'App'], function () {
     Route::get('/', ['uses' => 'StaticsController@home']);
     Route::get('/galeries', ['uses' => 'StaticsController@showGaleries']);
     Route::get('/logements', ['uses' => 'StaticsController@showLogement']);
@@ -31,14 +31,18 @@ Route::group(['prefix' => '', 'namespace' => 'App'], function(){
 });
 
 //ADMIN
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
     Route::get('/', ['uses' => 'DashboardController@dashboard']);
     Route::post('passowrd/modify', ['uses' => 'AccountController@store']);
-    Route::resources( [
-        'users'        => 'Cms\UsersController',
-        'pages'        => 'Cms\PagesController',
-    ] );
-    
+    Route::resources([
+        'users'     => 'Cms\UsersController',
+        'pages'     => 'Cms\PagesController',
+        'salles'     => 'Cms\SalleController',
+        'blog/post' => 'Cms\Blog\PostController',
+        'blog/categories' => 'Cms\Blog\CategoriesController'
+    ]);
+    Route::get('/blog/post/publish/{id}', 'Cms\Blog\PostController@publish');
+    Route::get('/blog/post/un/publish/{id}', 'Cms\Blog\PostController@unPublish');
     Route::get('block/pages/{id}', 'Cms\BlocksController@show');
     Route::post('block/update/block/{id}', 'Cms\BlocksController@updateBlock');
     Route::post('block/delete/{id}', 'Cms\BlocksController@deleteBlock');
@@ -48,7 +52,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('block/pages/folder/block/{id}/{slug}/{blockId}', 'Cms\BlocksController@showBlocksDetails');
 });
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('login', ['uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['uses' => 'Auth\LoginController@login']);
     Route::get('logout', ['uses' => 'Auth\LoginController@logout']);

@@ -135,7 +135,7 @@
                                         <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }} form-group-default required"
                                              aria-required="true">
                                             <label>Description de la page</label>
-                                            <textarea type="text" class="form-control" name="description"
+                                            <textarea type="text" class="editor form-control" name="description"
                                                    placeholder="Description de la page">{{ old('description') }}</textarea>
                                             @if ($errors->has('description'))
                                                 <div class="help-block">

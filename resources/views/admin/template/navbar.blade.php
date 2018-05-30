@@ -56,6 +56,46 @@
             </li>
             <li>
                 <a href="javascript:;">
+                    <span class="title">Blog</span>
+                    <span class="arrow"></span>
+                </a>
+                <span class="icon-thumbnail">
+                    <i class="fa fa-user"></i>
+                </span>
+                <ul class="sub-menu">
+                    <li class="">
+                        <a href="javascript:;" class="w-100"><span class="title">Post</span>
+                            <span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="{{ action('Admin\Cms\Blog\PostController@create') }}">Ajouter un article</a>
+                                <span class="icon-thumbnail">pgs</span>
+                            </li>
+                            <li>
+                                <a href="{{ action('Admin\Cms\Blog\PostController@index') }}">Tout les articles</a>
+                                <span class="icon-thumbnail">pgs</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;" class="w-100"><span class="title">Categorie</span>
+                            <span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="{{ action('Admin\Cms\Blog\CategoriesController@create') }}">Ajouter une categorie</a>
+                                <span class="icon-thumbnail">pgs</span>
+                            </li>
+                            <li>
+                                <a href="{{ action('Admin\Cms\Blog\CategoriesController@index') }}">Toutes les categories</a>
+                                <span class="icon-thumbnail">pgs</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </li>
+            <li>
+                <a href="javascript:;">
                     <span class="title">Salle</span>
                     <span class="arrow"></span>
                 </a>
@@ -64,11 +104,11 @@
                 </span>
                 <ul class="sub-menu">
                     <li>
-                        <a href="{{ action('Admin\Cms\PagesController@create') }}">Ajouter une salle</a>
+                        <a href="{{ action('Admin\Cms\SalleController@create') }}">Ajouter une salle</a>
                         <span class="icon-thumbnail">pgs</span>
                     </li>
                     <li>
-                        <a href="{{ action('Admin\Cms\PagesController@index') }}">Toutes les salles</a>
+                        <a href="{{ action('Admin\Cms\SalleController@index') }}">Toutes les salles</a>
                         <span class="icon-thumbnail">pgs</span>
                     </li>
                 </ul>
