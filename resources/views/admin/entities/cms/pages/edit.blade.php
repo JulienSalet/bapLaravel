@@ -61,7 +61,7 @@
             $('[data-text="seo-title"]').text($(this).val())
         })
         $('[name="seo_description"]').on('keyup', function () {
-            var max = 160;
+            var max = 300;
             var current = $(this).val().length;
             var remaining = max - current;
             if (remaining < 50 && remaining > 0) {
@@ -97,7 +97,7 @@
             $('[data-text="og-title"]').text($(this).val())
         })
         $('[name="og_description"]').on('keyup', function () {
-            var max = 160;
+            var max = 300;
             var current = $(this).val().length;
             var remaining = max - current;
             if (remaining < 50 && remaining > 0) {
@@ -381,7 +381,7 @@
                                         <label>
                                             Courte description
                                             <span id="remainingSeoDescription">
-                                                (<span class="count">160</span> CARACTÈRES RESTANTS
+                                                (<span class="count">300</span> CARACTÈRES RESTANTS
                                                 )
                                             </span>
                                         </label>
@@ -438,7 +438,7 @@
                                         <label>
                                             Courte description
                                             <span id="remainingOgDescription">
-                                                (<span class="count">160</span>CARACTÈRES RESTANTS
+                                                (<span class="count">300</span>CARACTÈRES RESTANTS
                                                 )
                                             </span>
                                         </label>
