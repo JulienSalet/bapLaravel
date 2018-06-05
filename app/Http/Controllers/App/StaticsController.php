@@ -15,7 +15,7 @@ class StaticsController extends Controller
     {
         $page = Pages::find(1);
         return view(self::PATH_VIEW . 'home')->with([
-            'pages' => $page
+            'page' => $page
         ]);
     }
 
