@@ -14,6 +14,9 @@
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
                             <h1>{{ getTexts('home-first-section-head-title') }}</h1>
+                            <p>
+                                {{ getTexts('home-first-section-desc') }}
+                            </p>
                             <button class="mt-5 classic-btn">{{ getTexts("home-second-section-first-block") }}</button>
                         </div>
                     </div>
