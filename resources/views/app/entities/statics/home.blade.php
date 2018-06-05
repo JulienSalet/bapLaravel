@@ -14,15 +14,14 @@
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
                             <h1>{{ getTexts('home-first-section-head-title') }}</h1>
-                            <p>
-                                {{ getTexts('home-first-section-desc') }}
-                            </p>
+                            {!! getTexts('home-first-section-desc')  !!}
                             <button class="mt-5 classic-btn">{{ getTexts("home-second-section-first-block") }}</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="second-section mt-4 ml-2">
+                
                 <div class="d-flex h-50">
                     <div class="block article-1">
                         <h2>Article 1</h2>
