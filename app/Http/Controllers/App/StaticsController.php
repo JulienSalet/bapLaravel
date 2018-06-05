@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\App;
 
+use App\Models\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,8 +13,9 @@ class StaticsController extends Controller
     
     public function home(Request $request)
     {
+        $page = Pages::find(1);
         return view(self::PATH_VIEW . 'home')->with([
-
+            'pages' => $page
         ]);
     }
 
