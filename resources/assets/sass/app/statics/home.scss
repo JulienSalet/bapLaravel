@@ -31,11 +31,11 @@ button{
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0px;
     width: 7%;
     background-color: #414143;
-    height: 263%;
+    height: 100%;
     .content-sidebar {
         margin-top: 111px;
         img {
