@@ -36,8 +36,9 @@ button{
     width: 7%;
     background-color: #414143;
     height: 100%;
+    display: flex;
+    justify-content: center;
     .content-sidebar {
-        margin-top: 111px;
         img {
             cursor: pointer;
             width: 30px;
