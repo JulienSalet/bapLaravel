@@ -61,18 +61,18 @@
                 <div class="d-flex h-50">
                     <div class="block article-1">
                         <h2>Article 1</h2>
-                        <button class="mt-1 classic-btn">En savoir plus</button>
+                        <button class="mt-1 classic-btn">{!! getTexts('reservation-btn-show-article') !!}</button>
                     </div>
                     <div class="block maternelle-1">
                         <span>News</span>
                         <h2 class="text-center">Réhabilitation d'une maternelle</h2>
-                        <button class="mt-1 classic-btn">En savoir plus</button>
+                        <button class="mt-1 classic-btn">{!! getTexts('reservation-btn-show-article') !!}</button>
                     </div>
                 </div>
                 <div class="d-flex h-50 mt-4">
                     <div class="block article-2">
                         <h2>Article 2</h2>
-                        <button class="mt-1 classic-btn">En savoir plus</button>
+                        <button class="mt-1 classic-btn">{!! getTexts('reservation-btn-show-article') !!}</button>
                     </div>
                     <div class="block info">
                         <h2 class="text-center">Info pratiques</h2>
@@ -86,7 +86,7 @@
                 <div class="d-flex h-50 mt-4">
                     <div class="block article-3">
                         <h2>Article 3</h2>
-                        <button class="mt-1 classic-btn">En savoir plus</button>
+                        <button class="mt-1 classic-btn">{!! getTexts('reservation-btn-show-article') !!}</button>
                     </div>
                 </div>
             </div>
