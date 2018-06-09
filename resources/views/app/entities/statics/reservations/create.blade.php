@@ -16,7 +16,7 @@
                             <div class="row w-75">
                                 <div class="col-md-6">
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">Adresse email</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-first-input-label') !!}</label>
                                         <input type="email" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
