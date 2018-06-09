@@ -18,5 +18,8 @@
         <div class="mt-4">
             <img src="{{ asset('images/icons/plane.png') }}" alt="">
         </div>
+        <div class="mt-4">
+            <img src="{{ asset('images/icons/world.png') }}" alt="">
+        </div>
     </div>
 </div>

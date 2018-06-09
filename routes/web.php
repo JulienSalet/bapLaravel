@@ -28,6 +28,7 @@ Route::group(['prefix' => '', 'namespace' => 'App'], function () {
     Route::get('/reservation', ['uses' => 'StaticsController@showReservation']);
     Route::get('/acces', ['uses' => 'StaticsController@showAcces']);
     Route::get('/blog', ['uses' => 'StaticsController@showBlog']);
+    Route::get('/article/{slug}', ['uses' => 'BlogController@show']);
 });
 
 //ADMIN

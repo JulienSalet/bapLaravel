@@ -29,7 +29,6 @@ class StaticsController extends Controller
     {
         
         return view(self::PATH_VIEW . 'blog')->with([
-            'page' => $page,
         ]);
     }
     
