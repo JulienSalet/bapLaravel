@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\Pages;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,15 +15,21 @@ class StaticsController extends Controller
     public function home(Request $request)
     {
         $page = Pages::find(1);
+        
+        //Je recupere tout les articles et je les trie par ID descendant (le dernier crée en premier)
+        $articles = Post::orderBy('id', 'DESC')->get();
+        
         return view(self::PATH_VIEW . 'home')->with([
-            'page' => $page
+            'page'     => $page,
+            'articles' => $articles
         ]);
     }
-
+    
     public function showBlog(Request $request)
     {
+        
         return view(self::PATH_VIEW . 'blog')->with([
-
+            'page' => $page,
         ]);
     }
     
@@ -30,33 +37,37 @@ class StaticsController extends Controller
     public function showGaleries(Request $request)
     {
         
-        for ($i = 1; $i <= 10; $i++){
-            "J'adore $i";
-        }
+        $page = Pages::find(5);
         
         return view(self::PATH_VIEW . 'galeries')->with([
-    
+            'page' => $page,
         ]);
     }
     
     public function showLogement(Request $request)
     {
+        $page = Pages::find(10);
+        
         return view(self::PATH_VIEW . 'temoignages')->with([
-    
+            'page' => $page,
         ]);
     }
     
     public function showReservation(Request $request)
     {
+        $page = Pages::find(3);
+        
         return view(self::PATH_VIEW . 'reservations.create')->with([
-    
+            'page' => $page,
         ]);
     }
     
     public function showAcces(Request $request)
     {
-        return view(self::PATH_VIEW . 'access')->with([
+        $page = Pages::find(4);
         
+        return view(self::PATH_VIEW . 'access')->with([
+            'page' => $page,
         ]);
     }
 }
