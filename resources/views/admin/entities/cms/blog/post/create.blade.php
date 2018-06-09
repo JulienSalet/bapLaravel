@@ -176,7 +176,7 @@
                                         <div class="form-group {{ $errors->has('file') ? 'has-error' : '' }} form-group-default required"
                                              aria-required="true">
                                             <label>Image de l'article</label>
-                                            <input type="file" class="form-control" name="file" required>
+                                            <input type="file" class="form-control" name="file">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
