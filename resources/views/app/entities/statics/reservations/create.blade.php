@@ -12,44 +12,44 @@
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
-                            <h1>Réservation</h1>
+                            <h1>{!! getTexts('reservation-title') !!}</h1>
                             <div class="row w-75">
                                 <div class="col-md-6">
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-first-input-label') !!}</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-login-first-input-label') !!}</label>
                                         <input type="email" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-login-second-input-label') !!}</label>
                                         <input type="password" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
                                         {{--<label for="exampleInputEmail1" class="text-white">Nom</label>--}}
                                         {{--<input type="text" class="form-control">--}}
-                                        <button class="classic-btn co text-center">Connexion</button>
+                                        <button class="classic-btn co text-center">{!! getTexts('reservation-login-btn') !!}</button>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">Nom</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-registration-first-input-label') !!}</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">Prénom</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-registration-second-input-label') !!}</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">Adresse email</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-registration-third-input-label') !!}</label>
                                         <input type="email" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
-                                        <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                        <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-registration-fourth-input-label') !!}</label>
                                         <input type="password" class="form-control">
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between">
                                         {{--<label for="exampleInputEmail1" class="text-white">Nom</label>--}}
                                         {{--<input type="text" class="form-control">--}}
-                                        <button class="classic-btn inscri text-center">Inscription</button>
+                                        <button class="classic-btn inscri text-center">{!! getTexts('reservation-registration-btn') !!}</button>
                                     </div>
                                 </div>
                             </div>
