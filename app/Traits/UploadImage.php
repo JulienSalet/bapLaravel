@@ -6,6 +6,8 @@ use App\Models\File;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 
+//use Intervention\Image\Facades\Image;
+
 trait UploadImage
 {
     function uploadImage($image, $name, $width = null, $height = null, $format = false)
