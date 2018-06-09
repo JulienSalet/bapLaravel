@@ -19,7 +19,7 @@
 
     <div class="login-container bg-white">
         <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
-            <img src="" alt="logo" width="100">
+            <img src="{{ asset('images/logo-2.png') }}" alt="logo" width="100">
             <p class="p-t-35">Connectez-vous à votre espace professionnel</p>
             <form class="p-t-15" action="{{ action('Admin\Auth\LoginController@login') }}"
                   method="post">
