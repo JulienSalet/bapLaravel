@@ -40,9 +40,11 @@ class StaticsController extends Controller
     {
         
         $page = Pages::find(5);
+        $articles = Post::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'galeries')->with([
             'page' => $page,
+            'articles' => $articles
         ]);
     }
     
@@ -59,19 +61,23 @@ class StaticsController extends Controller
     {
         $page = Pages::find(3);
         $salles = Salle::orderBy('id', 'DESC')->get();
+        $articles = Post::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'reservations.create')->with([
             'page' => $page,
-            'salles' => $salles
+            'salles' => $salles,
+            'articles' => $articles
         ]);
     }
     
     public function showAcces(Request $request)
     {
         $page = Pages::find(4);
+        $articles = Post::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'access')->with([
             'page' => $page,
+            'articles' => $articles
         ]);
     }
     
