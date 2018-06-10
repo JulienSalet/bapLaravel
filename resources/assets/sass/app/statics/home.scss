@@ -104,6 +104,41 @@ button {
             background-image: none;
         }
 
+        &.orientation{
+            background-color: #2f3490;
+            background-image: none;
+        }
+
+        &.sante{
+            background-color: #f06d54;
+            background-image: none;
+        }
+
+        &.logement {
+            background-color: #7789a2;
+            background-image: none;
+        }
+
+        &.scolarite{
+            background-color: #569272;
+            background-image: none;
+        }
+
+        &.loisir{
+            background-color: #c02f2f;
+            background-image: none;
+        }
+
+        &.mobilite{
+            background-color: #569272;
+            background-image: none;
+        }
+
+        &.voyage{
+            background-color: #4b84a1;
+            background-image: none;
+        }
+
         background-image: url("/images/photo-1.png");
         background-size: cover;
         background-position: center;
@@ -305,3 +340,6 @@ a {
         text-underline: none;
     }
 }
+
+
+

@@ -8,7 +8,7 @@
     <div class="">
         @include('app.partials.sidebar')
         <div class="content-page">
-            <div class="home acces">
+            <div class="home mobilite">
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <h1 class="w-100 text-center">Mobilite</h1>
