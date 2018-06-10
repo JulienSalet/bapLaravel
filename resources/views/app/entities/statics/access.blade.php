@@ -13,27 +13,27 @@
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
-                            <h1>Accès</h1>
+                            <h1>{!! getTexts('access-first-title') !!}</h1>
                             <p class="sub-deck">
-                                Sous titre
+                                {!! getTexts('access-sub-title') !!}
                             </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="itm-metro d-flex flex-column align-items-center justify-content-start">
-                                <h3 class="text-center font-weight-bold mb-5">1 boulevard Aristide Briand <br> 92400 Courbevoie</h3>
+                                <h3 class="text-center font-weight-bold mb-5">{!! getTexts('access-adresse') !!}</h3>
                                 <div class="w-100 mb-2 justify-content-center d-flex align-items-center">
                                     <img src="{{ asset('images/metro-1.png') }}" alt="" class="mr-5">
-                                    <span>Arrêt stade de courbevoie</span>
+                                    <span>{!! getTexts('access-first-stop') !!}</span>
                                 </div>
                                 <div class="w-100 mb-2 justify-content-center d-flex align-items-center">
                                     <img src="{{ asset('images/metro-2.png') }}" alt="" class="mr-5">
-                                    <span>Arrêt Paix Verdun</span>
+                                    <span>{!! getTexts('access-second-stop') !!}</span>
                                 </div>
                                 <div class="w-100 mb-2 justify-content-center d-flex align-items-center">
                                     <img style="margin-left: 70px !important;" src="{{ asset('images/metro-3.png') }}" alt="" class="mr-5">
-                                    <span>Arrêt République Colombes</span>
+                                    <span>{!! getTexts('access-third-stop') !!}</span>
                                 </div>
                             </div>
                         </div>
