@@ -2,7 +2,6 @@
 
 
 @section('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
     <link href="{{ asset('pages-assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet"
           type="text/css"
           media="screen">
@@ -12,8 +11,11 @@
     <link href="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
           type="text/css"
           media="screen">
+    <link media="screen" type="text/css" rel="stylesheet"
+          href="{{ asset('pages-assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}">
     <link href="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
           type="text/css" media="screen">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 @stop
 
 @section('content')
@@ -24,14 +26,14 @@
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
-                            <h1>Réservation</h1>
+                            <h1>{!! getTexts('reservation-title') !!}</h1>
                             <p class="sub-deck">
-                                Prenez une reservation !
+                                {!! getTexts('reservation-second-title') !!}
                             </p>
                             @if(\Illuminate\Support\Facades\Auth::guest())
                                 <div class="row w-75">
                                     <form action="{{ action('App\StaticsController@login') }}"
-                                          class="col-md-6 d-flex flex-column">
+                                          class="col-md-6 d-flex flex-column" method="POST">
                                         {{ csrf_field() }}
                                         {{--<div class="col-md-6">--}}
                                         <div class="form-group d-flex align-items-center justify-content-between">
@@ -40,7 +42,7 @@
                                             <input type="email" class="form-control" name="email">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-second-input-label') !!}</label>
                                             <input type="password" class="form-control" name="password">
                                         </div>
                                         <div class="form-group d-flex flex-column align-items-center justify-content-center">
@@ -53,7 +55,7 @@
                                                 </span>
                                                 @endif
                                             @endif
-                                            <button class="classic-btn co text-center">Connexion</button>
+                                            <button class="classic-btn co text-center">{!! getTexts('reservation-connexion-btn') !!}</button>
                                         </div>
                                         {{--</div>--}}
                                     </form>
@@ -61,24 +63,23 @@
                                           class="col-md-6">
                                         {{ csrf_field() }}
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Nom</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-first-input-label') !!}</label>
                                             <input type="text" class="form-control" name="lastname">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Prénom</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-second-input-label') !!}</label>
                                             <input type="text" class="form-control" name="firstname">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Adresse email</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-third-input-label') !!}</label>
                                             <input type="email" class="form-control" name="email">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-password-input-label') !!}</label>
                                             <input type="password" class="form-control" name="password">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Confirmation du mot de
-                                                                                               passe</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-confirm-password-input-label') !!}</label>
                                             <input type="password" class="form-control" name="password_confirmation">
                                         </div>
                                         <div class="form-group d-flex flex-column align-items-center justify-content-between">
@@ -106,7 +107,7 @@
                                                 </span>
                                                 @endif
                                             @endif
-                                            <button class="classic-btn inscri text-center">Inscription</button>
+                                            <button class="classic-btn inscri text-center">{!! getTexts('reservation-register-btn') !!}</button>
                                         </div>
                                     </form>
                                 </div>
@@ -114,12 +115,13 @@
                                 
                                 <form action="{{ action('App\StaticsController@postReservation') }}" class="row w-75"
                                       method="POST">
+                                    {{ csrf_field() }}
                                     <div class="col-md-6">
                                         <div class="form-group d-flex flex-column justify-content-center align-items-center">
                                             <label for="" class="sub-deck">
-                                                Choisir une salle
+                                                {!! getTexts('reservation-salle-choice') !!}
                                             </label>
-                                            <select name="salle[]" id="" class="form-control">
+                                            <select name="salle" id="" class="form-control">
                                                 @foreach($salles as $salle)
                                                     <option value="{{ $salle->id }}">{{ $salle->titre }}</option>
                                                 @endforeach
@@ -128,16 +130,31 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group d-flex flex-column justify-content-center align-items-center">
-                                            <label for="" class="sub-deck">L'horraire</label>
-                                            <input type="text" id="time">
-                                            @foreach($salles as $salle)
-                                                @foreach(json_decode($salle->horraire) as $horraire)
-                                                    @foreach($horraire as $key => $value)
-                                                        <option value="{{ $salle->id }}">{{ $value }}</option>
-                                                    @endforeach
-                                                @endforeach
-                                            @endforeach
+                                            <label for="" class="sub-deck">{!! getTexts('reservation-salle-horaire') !!}</label>
+                                            <div class="d-flex flex-column justify-content-center align-items-start">
+                                                <input type="text" id="datepicker" name="date" class="ml-3 mb-3 w-100 form-control" placeholder="Date de la reservation">
+                                                <div class="ml-3 w-100 d-flex align-items-center justify-content-around">
+                                                    <div class="input-group-addon sub-deck px-2">De </div>
+                                                    {{--@foreach($salles as $salle)--}}
+                                                    {{--@foreach(json_decode($salle->horraire) as $horraire)--}}
+                                                    {{--@foreach($horraire as $key => $value)--}}
+                                                    {{--<option value="{{ $salle->id }}">{{ $value }}</option>--}}
+                                                    {{--@endforeach--}}
+                                                    {{--@endforeach--}}
+                                                    {{--@endforeach--}}
+                                                    <input type="text" class="time form-control"
+                                                           name="horaire[start_time]"
+                                                           value="10:00" value="">
+                                                    <div class="input-group-addon sub-deck px-2">A</div>
+                                                    <input type="text" class="time form-control"
+                                                           name="horaire[end_time]"
+                                                           value="22:00">
+                                                </div>
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="w-100 d-flex justify-content-center align-items-center">
+                                        <button type="submit" class="btn">{!! getTexts('reservation-btn') !!}</button>
                                     </div>
                                 </form>
                             @endif
@@ -153,8 +170,9 @@
 @section('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript"
-            src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-    <script src="{{ asset('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
+            src="{{ asset('pages-assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
+    <script src="{{ asset('pages-assets/plugins/classie/classie.js') }}" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             $('select').select2()
@@ -177,9 +195,9 @@
                 language: 'fr',
                 todayHight: true
             });
-            $( '#time' ).timepicker( {
+            $( '.time' ).timepicker( {
                 showMeridian: false,
-                minuteStep:   1
+                minuteStep: 60
             } ).on( 'show.timepicker', function (e) {
                 var widget = $( '.bootstrap-timepicker-widget' );
                 widget.find( '.glyphicon-chevron-up' ).removeClass().addClass( 'pg-arrow_maximize' );
