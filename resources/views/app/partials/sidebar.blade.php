@@ -10,25 +10,25 @@
             {{--</li>--}}
         @endif
         <div class="mt-4">
-            <img src="{{ asset('images/icons/compass.png') }}" alt="">
+            <a href="orientation"> <img src="{{ asset('images/icons/compass.png') }}" alt=""></a>
         </div>
         <div class="mt-4">
-            <img src="{{ asset('images/icons/heartbeat.png') }}" alt="">
+            <a href="sante"><img src="{{ asset('images/icons/heartbeat.png') }}" alt=""></a>
         </div>
         <div class="mt-4">
-            <img src="{{ asset('images/icons/home.png') }}" alt="">
+            <a href="logement"><img src="{{ asset('images/icons/home.png') }}" alt=""></a>
         </div>
         <div class="mt-4">
-            <img src="{{ asset('images/icons/diploma.png') }}" alt="">
+            <a href="scolarite"><img src="{{ asset('images/icons/diploma.png') }}" alt=""></a>
         </div>
         <div class="mt-4">
-            <img src="{{ asset('images/icons/mask.png') }}" alt="">
+            <a href="loisir"><img src="{{ asset('images/icons/mask.png') }}" alt=""></a>
         </div>
         <div class="mt-4">
-            <img src="{{ asset('images/icons/world.png') }}" alt="">
+            <a href="mobilite"><img src="{{ asset('images/icons/world.png') }}" alt=""></a>
         </div>
         <div class="mt-4">
-            <img src="{{ asset('images/icons/plane.png') }}" alt="">
+            <a href="voyage"><img src="{{ asset('images/icons/plane.png') }}" alt=""></a>
         </div>
     </div>
 </div>

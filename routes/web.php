@@ -32,6 +32,13 @@ Route::group(['prefix' => '', 'namespace' => 'App'], function () {
     Route::post('/register', ['uses' => 'StaticsController@register']);
     Route::post('/create/reservations', ['uses' => 'StaticsController@postReservation']);
     Route::get('/article/{slug}', ['uses' => 'BlogController@show']);
+    Route::get('/orientation', ['uses' => 'StaticsController@showOrientation']);
+    Route::get('/sante', ['uses' => 'StaticsController@showSante']);
+    Route::get('/logement', ['uses' => 'StaticsController@showLogement']);
+    Route::get('/scolarite', ['uses' => 'StaticsController@showScolarite']);
+    Route::get('/loisir', ['uses' => 'StaticsController@showLoisir']);
+    Route::get('/mobilite', ['uses' => 'StaticsController@showMobilite']);
+    Route::get('/voyage', ['uses' => 'StaticsController@showVoyage']);
 });
 
 //ADMIN
