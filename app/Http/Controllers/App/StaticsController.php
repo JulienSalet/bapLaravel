@@ -23,8 +23,9 @@ class StaticsController extends Controller
         $page = Pages::find(1);
         
         //Je recupere tout les articles et je les trie par ID descendant (le dernier crée en premier)
-        $articles = Post::orderBy('id', 'DESC')->get();
-        
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'home')->with([
             'page'     => $page,
             'articles' => $articles
@@ -33,8 +34,9 @@ class StaticsController extends Controller
     
     public function showBlog(Request $request)
     {
-        
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
         return view(self::PATH_VIEW . 'blog')->with([
+            'articles' => $articles
         ]);
     }
     
@@ -43,8 +45,9 @@ class StaticsController extends Controller
     {
         
         $page = Pages::find(5);
-        $articles = Post::orderBy('id', 'DESC')->get();
-        
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'galeries')->with([
             'page'     => $page,
             'articles' => $articles
@@ -64,8 +67,9 @@ class StaticsController extends Controller
     {
         $page = Pages::find(3);
         $salles = Salle::orderBy('id', 'DESC')->get();
-        $articles = Post::orderBy('id', 'DESC')->get();
-        
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'reservations.create')->with([
             'page'     => $page,
             'salles'   => $salles,
@@ -76,8 +80,9 @@ class StaticsController extends Controller
     public function showAcces(Request $request)
     {
         $page = Pages::find(4);
-        $articles = Post::orderBy('id', 'DESC')->get();
-        
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'access')->with([
             'page'     => $page,
             'articles' => $articles
@@ -87,8 +92,9 @@ class StaticsController extends Controller
     public function showOrientation(Request $request)
     {
         $page = Pages::find(6);
-        $articles = Post::orderBy('id', 'DESC')->get();
-
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'sidebar.orientation')->with([
             'page' => $page,
             'articles' => $articles
@@ -98,8 +104,9 @@ class StaticsController extends Controller
     public function showSante(Request $request)
     {
         $page = Pages::find(8);
-        $articles = Post::orderBy('id', 'DESC')->get();
-
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'sidebar.sante')->with([
             'page' => $page,
             'articles' => $articles
@@ -109,8 +116,9 @@ class StaticsController extends Controller
     public function showLogement(Request $request)
     {
         $page = Pages::find(10);
-        $articles = Post::orderBy('id', 'DESC')->get();
-
+        $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+    
+    
         return view(self::PATH_VIEW . 'sidebar.logement')->with([
             'page' => $page,
             'articles' => $articles
@@ -120,7 +128,8 @@ class StaticsController extends Controller
     public function showScolarite(Request $request)
     {
         $page = Pages::find(7);
-        $articles = Post::orderBy('id', 'DESC')->get();
+                $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+
 
         return view(self::PATH_VIEW . 'sidebar.scolarite')->with([
             'page' => $page,
@@ -131,7 +140,8 @@ class StaticsController extends Controller
     public function showLoisir(Request $request)
     {
         $page = Pages::find(9);
-        $articles = Post::orderBy('id', 'DESC')->get();
+                $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+
 
         return view(self::PATH_VIEW . 'sidebar.loisir')->with([
             'page' => $page,
@@ -142,7 +152,8 @@ class StaticsController extends Controller
     public function showMobilite(Request $request)
     {
         $page = Pages::find(11);
-        $articles = Post::orderBy('id', 'DESC')->get();
+                $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+
 
         return view(self::PATH_VIEW . 'sidebar.mobilite')->with([
             'page' => $page,
@@ -153,7 +164,8 @@ class StaticsController extends Controller
     public function showVoyage(Request $request)
     {
         $page = Pages::find(12);
-        $articles = Post::orderBy('id', 'DESC')->get();
+                $articles = Post::where('publish', 1)->orderBy('id', 'DESC')->get();
+
 
         return view(self::PATH_VIEW . 'sidebar.voyages')->with([
             'page' => $page,
