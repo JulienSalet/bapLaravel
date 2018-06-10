@@ -21,4 +21,13 @@
 @include('app.partials.notifications')
 @yield('js')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.1.1/turbolinks.js"
+        data-turbolinks-eval="false"></script>
+<script>
+    Turbolinks.start();
+    document.addEventListener('turbolinks:load', function () {
+        console.log('adzz')
+    })
+</script>
+
 </html>

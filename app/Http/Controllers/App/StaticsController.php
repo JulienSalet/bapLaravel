@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\App;
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Models\Pages;
 use App\Models\Post;
+use App\Models\Salle;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -55,9 +58,11 @@ class StaticsController extends Controller
     public function showReservation(Request $request)
     {
         $page = Pages::find(3);
+        $salles = Salle::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'reservations.create')->with([
             'page' => $page,
+            'salles' => $salles
         ]);
     }
     
@@ -68,5 +73,20 @@ class StaticsController extends Controller
         return view(self::PATH_VIEW . 'access')->with([
             'page' => $page,
         ]);
+    }
+    
+    public function login(Request $request)
+    {
+        
+        $login = new LoginController();
+        $login->login($request);
+        return redirect()->back()->with('sucess', 'Vous etes connecté !');
+    }
+    
+    public function register(Request $request)
+    {
+        $register = new RegisterController();
+        $register->register($request);
+        return redirect()->back()->with('sucess', 'Vous êtes incrit !');
     }
 }
