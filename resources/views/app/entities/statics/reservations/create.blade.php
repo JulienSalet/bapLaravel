@@ -123,7 +123,6 @@
                                             @foreach($salles as $salle)
                                                 @foreach(json_decode($salle->horraire) as $horraire)
                                                     @foreach($horraire as $key => $value)
-                                                        {{ dd($value) }}
                                                         <option value="{{ $salle->id }}">{{ $value }}</option>
                                                     @endforeach
                                                 @endforeach
