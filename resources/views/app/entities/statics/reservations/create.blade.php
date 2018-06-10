@@ -3,7 +3,17 @@
 
 @section('css')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
-
+    <link href="{{ asset('pages-assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet"
+          type="text/css"
+          media="screen">
+    <link href="{{ asset('pages-assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet"
+          type="text/css"
+          media="screen">
+    <link href="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
+          type="text/css"
+          media="screen">
+    <link href="{{ asset('pages-assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
+          type="text/css" media="screen">
 @stop
 
 @section('content')
@@ -119,7 +129,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group d-flex flex-column justify-content-center align-items-center">
                                             <label for="" class="sub-deck">L'horraire</label>
-                                            
+                                            <input type="text" id="time">
                                             @foreach($salles as $salle)
                                                 @foreach(json_decode($salle->horraire) as $horraire)
                                                     @foreach($horraire as $key => $value)
@@ -174,9 +184,39 @@
 
 @section('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script type="text/javascript"
+            src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
     <script>
         $(document).ready(function () {
             $('select').select2()
+            let months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+            // DATEPICKER - Documentation : http://bootstrap-datepicker.readthedocs.io/en/latest/index.html
+            $.fn.datepicker.dates['fr'] = {
+                days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+                daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+                daysMin: ["D", "L", "M", "M", "J", "V", "S"],
+                months: months,
+                monthsShort: ["Janv", "Févr", "Mars", "Avr", "Mai", "Juin", "Juill", "Août", "Sept", "Oct", "Nov", "Déc"],
+                today: "Aujourd'hui",
+                clear: "Clear",
+                format: "dd/mm/yyyy",
+                titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+                weekStart: 1
+            };
+            $('#datepicker').datepicker({
+                format: 'dd/mm/yyyy', // FORMAT - Documentation : http://bootstrap-datepicker.readthedocs.io/en/latest/options.html#format
+                language: 'fr',
+                todayHight: true
+            });
+            $( '#time' ).timepicker( {
+                showMeridian: false,
+                minuteStep:   1
+            } ).on( 'show.timepicker', function (e) {
+                var widget = $( '.bootstrap-timepicker-widget' );
+                widget.find( '.glyphicon-chevron-up' ).removeClass().addClass( 'pg-arrow_maximize' );
+                widget.find( '.glyphicon-chevron-down' ).removeClass().addClass( 'pg-arrow_minimize' );
+            } );
         });
     </script>
 @stop
