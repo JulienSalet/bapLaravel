@@ -2,6 +2,7 @@
 
 
 @section('css')
+    
 @stop
 
 @section('content')
@@ -12,7 +13,10 @@
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
-                            <h1>{{ $article->title }}</h1>
+                            <h1 class="mb-20">{{ $article->title }}</h1>
+                            <div class="text-white">
+                                {!! $article->content !!}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -22,4 +26,5 @@
 @stop
 
 @section('js')
+
 @stop

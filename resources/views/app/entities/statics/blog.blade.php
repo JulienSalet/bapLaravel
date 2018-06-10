@@ -5,46 +5,21 @@
 @stop
 
 @section('content')
-    <div class="page-content">
+    <div class="page-content h-auto p-0 mb-5">
         @include('app.partials.sidebar')
         <div class="content-page">
             <div class="row w-100 m-auto blog-list">
-                <div class="col-md-6 pr-0">
-                    <div class="block article-1">
-                        <h2>Title</h2>
-                        <p class="sub-deck">
-                            Sous titre
-                        </p>
-                        <a href="{{ action('App\BlogController@show', 1) }}" class="mt-1 classic-btn">En savoir plus</a>
+                @foreach($articles as $article)
+                    <div class="col-md-6 pr-0">
+                        <div class="block article-1">
+                            <h2>{{ $article->title }}</h2>
+                            <p class="sub-deck">
+                                {{ $article->subtitle }}
+                            </p>
+                            <a href="{{ action('App\BlogController@show', $article->slug) }}" class="mt-1 classic-btn">{!! getTexts("home-btn-show-article") !!}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="block article-1">
-                        <h2>Title</h2>
-                        <p class="sub-deck">
-                            Sous titre
-                        </p>
-                        <a href="{{ action('App\BlogController@show', 1) }}" class="mt-1 classic-btn">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-6 pr-0">
-                    <div class="block article-1">
-                        <h2>Title</h2>
-                        <p class="sub-deck">
-                            Sous titre
-                        </p>
-                        <a href="{{ action('App\BlogController@show', 1) }}" class="mt-1 classic-btn">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="block article-1">
-                        <h2>Title</h2>
-                        <p class="sub-deck">
-                            Sous titre
-                        </p>
-                        <a href="{{ action('App\BlogController@show', 1) }}" class="mt-1 classic-btn">En savoir plus</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
