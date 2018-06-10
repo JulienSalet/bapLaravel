@@ -50,7 +50,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
         'pages'     => 'Cms\PagesController',
         'salles'     => 'Cms\SalleController',
         'blog/post' => 'Cms\Blog\PostController',
-        'blog/categories' => 'Cms\Blog\CategoriesController'
+        'blog/categories' => 'Cms\Blog\CategoriesController',
+        'reservations' => 'Cms\ReservationsController'
     ]);
     Route::get('/blog/post/publish/{id}', 'Cms\Blog\PostController@publish');
     Route::get('/blog/post/un/publish/{id}', 'Cms\Blog\PostController@unPublish');
