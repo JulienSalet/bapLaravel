@@ -11,10 +11,10 @@
             <div class="home logement">
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
-                        <h1 class="w-100 text-center"><img src="{{ asset('images/icons/home.png') }}" alt="">  {!! getTexts("sidebar-logement") !!}</h1>
+                        <h1 class="w-100 text-center"><img src="{{ asset('images/icons/home.png') }}" alt="">  {!! getTexts("sidebar-logement-title") !!}</h1>
                         <div class="col-md-10 offset-md-1 text-center">
                             <p>
-                                {!! getTexts("sidebar-logement") !!}
+                                {!! getTexts("sidebar-logement-texte") !!}
                             </p>
                         </div>
                     </div>
