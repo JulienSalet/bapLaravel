@@ -26,9 +26,9 @@
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
-                            <h1>Réservation</h1>
+                            <h1>{!! getTexts('reservation-title') !!}</h1>
                             <p class="sub-deck">
-                                Prenez une reservation !
+                                {!! getTexts('reservation-second-title') !!}
                             </p>
                             @if(\Illuminate\Support\Facades\Auth::guest())
                                 <div class="row w-75">
