@@ -352,6 +352,10 @@ button {
 
 .page-content {
     height: 248vh;
+    &.home{
+        height: auto !important;
+        padding: 0px 0px 520px;
+    }
 }
 
 footer {

@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <div class="page-content">
+    <div class="page-content home">
         @include('app.partials.sidebar')
         <div class="content-page">
             <div class="home">
