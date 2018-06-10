@@ -6,9 +6,12 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Models\Pages;
 use App\Models\Post;
+use App\Models\Reservation;
 use App\Models\Salle;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class StaticsController extends Controller
 {
@@ -43,7 +46,7 @@ class StaticsController extends Controller
         $articles = Post::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'galeries')->with([
-            'page' => $page,
+            'page'     => $page,
             'articles' => $articles
         ]);
     }
@@ -64,8 +67,8 @@ class StaticsController extends Controller
         $articles = Post::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'reservations.create')->with([
-            'page' => $page,
-            'salles' => $salles,
+            'page'     => $page,
+            'salles'   => $salles,
             'articles' => $articles
         ]);
     }
@@ -76,7 +79,7 @@ class StaticsController extends Controller
         $articles = Post::orderBy('id', 'DESC')->get();
         
         return view(self::PATH_VIEW . 'access')->with([
-            'page' => $page,
+            'page'     => $page,
             'articles' => $articles
         ]);
     }
@@ -86,6 +89,7 @@ class StaticsController extends Controller
         
         $login = new LoginController();
         $login->login($request);
+        
         return redirect()->back()->with('sucess', 'Vous etes connecté !');
     }
     
@@ -93,6 +97,26 @@ class StaticsController extends Controller
     {
         $register = new RegisterController();
         $register->register($request);
+        
         return redirect()->back()->with('sucess', 'Vous êtes incrit !');
+    }
+    
+    public function postReservation(Request $request)
+    {
+        request()->validate([
+            'salle'   => 'required',
+            'date'    => 'required',
+            'horaire' => 'required'
+        ]);
+        
+        $reservation = new Reservation();
+        $reservation->fk_salle_id = $request->salle;
+        $date = Carbon::createFromFormat('d/m/Y', request()->date);
+        $reservation->date = $date;
+        $reservation->horaire = json_encode($request->horaire);
+        $reservation->fk_user_id = Auth::user()->id;
+        $reservation->save();
+        
+        return redirect()->back()->with('success', 'Votre réservation a bien été enregistré, vous allez recevoir un mail avec un recapitulatif de la réservation');
     }
 }
