@@ -111,36 +111,64 @@ button {
         &.orientation{
             background-color: #2f3490;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         &.sante{
             background-color: #f06d54;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         &.logement {
             background-color: #7789a2;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         &.scolarite{
             background-color: #569272;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         &.loisir{
             background-color: #c02f2f;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         &.mobilite{
             background-color: #569272;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         &.voyage{
             background-color: #4b84a1;
             background-image: none;
+            h1{
+                color: white;
+                font-weight: bold;
+            }
         }
 
         background-image: url("/images/photo-1.png");
