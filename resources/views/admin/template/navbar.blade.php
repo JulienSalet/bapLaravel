@@ -123,7 +123,7 @@
                 </span>
                 <ul class="sub-menu">
                     <li>
-                        <a href="{{ action('Admin\Cms\PagesController@index') }}">Toutes les réservations</a>
+                        <a href="{{ action('Admin\Cms\ReservationsController@index') }}">Toutes les réservations</a>
                         <span class="icon-thumbnail">pgs</span>
                     </li>
                 </ul>
