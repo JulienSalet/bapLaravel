@@ -2,7 +2,7 @@
     <div class="content-sidebar d-flex flex-column justify-content-center align-items-center">
         @if(!Auth::guest())
             <div class="mt-4">
-                <a href="{{ action('App\StaticsController@showAcces') }}" class="nav-link">
+                <a href="{{ action('Auth\AccountController@showAccount') }}" class="nav-link">
                     <img src="{{ asset('images/icons/account.svg') }}" alt="">
                 </a>
             </div>

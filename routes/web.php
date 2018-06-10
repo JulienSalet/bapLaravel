@@ -19,6 +19,10 @@ Route::get('/logout', function () {
     return redirect()->back();
 });
 
+Route::group(['prefix' => '', 'namespace' => 'Auth', 'middleware' => 'auth'], function () {
+    Route::get('/account', ['uses' => 'AccountController@showAccount']);
+});
+
 
 //APP
 Route::group(['prefix' => '', 'namespace' => 'App'], function () {
@@ -46,12 +50,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('/', ['uses' => 'DashboardController@dashboard']);
     Route::post('passowrd/modify', ['uses' => 'AccountController@store']);
     Route::resources([
-        'users'     => 'Cms\UsersController',
-        'pages'     => 'Cms\PagesController',
-        'salles'     => 'Cms\SalleController',
-        'blog/post' => 'Cms\Blog\PostController',
+        'users'           => 'Cms\UsersController',
+        'pages'           => 'Cms\PagesController',
+        'salles'          => 'Cms\SalleController',
+        'blog/post'       => 'Cms\Blog\PostController',
         'blog/categories' => 'Cms\Blog\CategoriesController',
-        'reservations' => 'Cms\ReservationsController'
+        'reservations'    => 'Cms\ReservationsController'
     ]);
     Route::get('/blog/post/publish/{id}', 'Cms\Blog\PostController@publish');
     Route::get('/blog/post/un/publish/{id}', 'Cms\Blog\PostController@unPublish');
