@@ -33,8 +33,9 @@ class StaticsController extends Controller
     
     public function showBlog(Request $request)
     {
-        
+        $articles = Post::orderBy('id', 'DESC')->get();
         return view(self::PATH_VIEW . 'blog')->with([
+            'articles' => $articles
         ]);
     }
     
