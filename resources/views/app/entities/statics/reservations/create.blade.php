@@ -19,7 +19,7 @@
 @stop
 
 @section('content')
-    <div class="">
+    <div class="page-content">
         @include('app.partials.sidebar')
         <div class="content-page">
             <div class="home galerie resa">
