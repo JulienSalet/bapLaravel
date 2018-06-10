@@ -11,7 +11,7 @@
             <div class="home scolarite">
                 <div class="container-fluid px-0 mx-0">
                     <div class="row">
-                        <h1 class="w-100 text-center"><img src="{{ asset('images/icons/diploma.png') }}" alt="">  Scolarité</h1>
+                        <h1 class="w-100 text-center"><img src="{{ asset('images/icons/diploma.png') }}" alt="">  {!! getTexts("sidebar-scolarite") !!}</h1>
                         <div class="col-md-6 d-flex flex-column align-items-center justify-content-center first-section">
                         </div>
                         <div class="col-md-6 d-flex flex-column align-items-center justify-content-center first-section">
