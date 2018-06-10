@@ -48,14 +48,14 @@ class StaticsController extends Controller
         ]);
     }
     
-    public function showLogement(Request $request)
+    /*public function showLogement2(Request $request)
     {
-        $page = Pages::find(10);
+        $page = Pages::find(100);
         
         return view(self::PATH_VIEW . 'temoignages')->with([
             'page' => $page,
         ]);
-    }
+    }*/
     
     public function showReservation(Request $request)
     {
@@ -80,7 +80,84 @@ class StaticsController extends Controller
             'articles' => $articles
         ]);
     }
-    
+
+    public function showOrientation(Request $request)
+    {
+        $page = Pages::find(6);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.orientation')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
+    public function showSante(Request $request)
+    {
+        $page = Pages::find(8);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.sante')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
+    public function showLogement(Request $request)
+    {
+        $page = Pages::find(10);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.logement')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
+    public function showScolarite(Request $request)
+    {
+        $page = Pages::find(7);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.scolarite')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
+    public function showLoisir(Request $request)
+    {
+        $page = Pages::find(9);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.loisir')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
+    public function showMobilite(Request $request)
+    {
+        $page = Pages::find(11);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.mobilite')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
+    public function showVoyage(Request $request)
+    {
+        $page = Pages::find(12);
+        $articles = Post::orderBy('id', 'DESC')->get();
+
+        return view(self::PATH_VIEW . 'sidebar.voyages')->with([
+            'page' => $page,
+            'articles' => $articles
+        ]);
+    }
+
     public function login(Request $request)
     {
         
