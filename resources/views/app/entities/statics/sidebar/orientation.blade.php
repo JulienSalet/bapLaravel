@@ -13,10 +13,10 @@
                     <div class="row">
 
                         <h1 class="w-100 text-center"><img src="{{ asset('images/icons/compass.png') }}" alt="">  {!! getTexts("sidebar-orientation") !!}</h1>
-                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center first-section">
-                        </div>
-                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center first-section">
-
+                        <div class="col-md-10 offset-md-1 text-center">
+                            <p>
+                                {!! getTexts("sidebar-orientation") !!}
+                            </p>
                         </div>
                     </div>
                 </div>
