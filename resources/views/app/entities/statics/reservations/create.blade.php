@@ -42,7 +42,7 @@
                                             <input type="email" class="form-control" name="email">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-second-input-label') !!}</label>
                                             <input type="password" class="form-control" name="password">
                                         </div>
                                         <div class="form-group d-flex flex-column align-items-center justify-content-center">
@@ -55,7 +55,7 @@
                                                 </span>
                                                 @endif
                                             @endif
-                                            <button class="classic-btn co text-center">Connexion</button>
+                                            <button class="classic-btn co text-center">{!! getTexts('reservation-connexion-btn') !!}</button>
                                         </div>
                                         {{--</div>--}}
                                     </form>
@@ -63,24 +63,23 @@
                                           class="col-md-6">
                                         {{ csrf_field() }}
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Nom</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-first-input-label') !!}</label>
                                             <input type="text" class="form-control" name="lastname">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Prénom</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-second-input-label') !!}</label>
                                             <input type="text" class="form-control" name="firstname">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Adresse email</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-third-input-label') !!}</label>
                                             <input type="email" class="form-control" name="email">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Mot de passe</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-password-input-label') !!}</label>
                                             <input type="password" class="form-control" name="password">
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between">
-                                            <label for="exampleInputEmail1" class="text-white">Confirmation du mot de
-                                                                                               passe</label>
+                                            <label for="exampleInputEmail1" class="text-white">{!! getTexts('reservation-register-confirm-password-input-label') !!}</label>
                                             <input type="password" class="form-control" name="password_confirmation">
                                         </div>
                                         <div class="form-group d-flex flex-column align-items-center justify-content-between">
@@ -108,7 +107,7 @@
                                                 </span>
                                                 @endif
                                             @endif
-                                            <button class="classic-btn inscri text-center">Inscription</button>
+                                            <button class="classic-btn inscri text-center">{!! getTexts('reservation-register-btn') !!}</button>
                                         </div>
                                     </form>
                                 </div>
@@ -120,7 +119,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group d-flex flex-column justify-content-center align-items-center">
                                             <label for="" class="sub-deck">
-                                                Choisir une salle
+                                                {!! getTexts('reservation-salle-choice') !!}
                                             </label>
                                             <select name="salle" id="" class="form-control">
                                                 @foreach($salles as $salle)
@@ -131,7 +130,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group d-flex flex-column justify-content-center align-items-center">
-                                            <label for="" class="sub-deck">L'horraire</label>
+                                            <label for="" class="sub-deck">{!! getTexts('reservation-salle-horaire') !!}</label>
                                             <div class="d-flex flex-column justify-content-center align-items-start">
                                                 <input type="text" id="datepicker" name="date" class="ml-3 mb-3 w-100 form-control" placeholder="Date de la reservation">
                                                 <div class="ml-3 w-100 d-flex align-items-center justify-content-around">
@@ -155,7 +154,7 @@
                                         </div>
                                     </div>
                                     <div class="w-100 d-flex justify-content-center align-items-center">
-                                        <button type="submit" class="btn">Prendre réservation</button>
+                                        <button type="submit" class="btn">{!! getTexts('reservation-btn') !!}</button>
                                     </div>
                                 </form>
                             @endif
