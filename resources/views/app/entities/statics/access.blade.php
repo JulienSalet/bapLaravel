@@ -45,7 +45,7 @@
                                         {{--frameborder="0" style="border:0"--}}
                                         {{--src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCo-AL2nTHl1mjuC21rbtfillHlQF8XBHA&q=" allowfullscreen>--}}
                                 {{--</iframe>--}}
-                                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.8514311742138!2d2.2546613158014823!3d48.8991685057884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665a01421f951%3A0x2b79a117e4a2485f!2s1+Boulevard+Aristide+Briand%2C+92400+Courbevoie!5e0!3m2!1sfr!2sfr!4v1528641382727" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.8514311742138!2d2.2546613158014823!3d48.8991685057884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665a01421f951%3A0x2b79a117e4a2485f!2s1+Boulevard+Aristide+Briand%2C+92400+Courbevoie!5e0!3m2!1sfr!2sfr!4v1528641382727" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
