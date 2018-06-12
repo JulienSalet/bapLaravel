@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
                             <h1>{!! getTexts('home-first-section-head-title') !!}</h1>
-                            <p class="sub-deck text-center w-50" style="font-size: 18px">
+                            <p class="sub-deck text-center w-75" style="font-size: 18px">
                                 {!! getTexts('home-first-section-desc')  !!}
                             </p>
                             <button class="mt-5 classic-btn">{!! getTexts("home-second-section-first-block") !!}</button>
