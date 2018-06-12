@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col d-flex flex-column align-items-center w-50 justify-content-center first-section">
                             <h1>{!! getTexts('access-first-title') !!}</h1>
-                            <p class="sub-deck w-25 m-auto" style="font-size: 23px">
+                            <p class="sub-deck">
                                 {!! getTexts('access-sub-title') !!}
                             </p>
                         </div>
