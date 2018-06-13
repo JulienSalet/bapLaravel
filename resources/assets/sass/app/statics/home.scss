@@ -53,7 +53,7 @@ button {
     margin-left: 7%;
 
     .home {
-        &.white{
+        &.white {
             background-color: transparent;
             background-image: none;
 
@@ -110,40 +110,40 @@ button {
             background-image: none;
         }
 
-        &.orientation{
+        &.orientation {
             background-color: #2f3490;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
             }
         }
 
-        &.sante{
+        &.sante {
             background-color: #f06d54;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
@@ -153,100 +153,100 @@ button {
         &.logement {
             background-color: #7789a2;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
             }
         }
 
-        &.scolarite{
+        &.scolarite {
             background-color: #569272;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
                 width: 90px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
             }
         }
 
-        &.loisir{
+        &.loisir {
             background-color: #c02f2f;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
                 width: 70px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
             }
         }
 
-        &.mobilite{
+        &.mobilite {
             background-color: #569272;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
                 width: 70px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
             }
         }
 
-        &.voyage{
+        &.voyage {
             background-color: #4b84a1;
             background-image: none;
-            h1{
+            h1 {
                 color: white;
                 font-weight: bold;
                 font-size: 70px;
                 margin-top: -150px;
                 margin-bottom: 50px;
             }
-            img{
+            img {
                 margin-bottom: 15px;
             }
-            p{
+            p {
                 color: white;
                 font-size: 16px;
                 margin-bottom: -90px;
@@ -434,7 +434,7 @@ button {
 
 .page-content {
     height: 248vh;
-    &.home{
+    &.home {
         height: auto !important;
         padding: 0px 0px 520px;
     }
@@ -459,32 +459,81 @@ a {
     }
 }
 
-.itm-metro{
-    span{
+.itm-metro {
+    span {
         font-size: 17px;
         font-weight: bold;
     }
 }
 
-#map{
+#map {
     height: 300px;
     width: 100%;
     //background-color: black;
 }
 
-.blog-list{
+.blog-list {
     margin-top: 20px;
-    .block{
+    .block {
         margin-top: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 100px 20px;
-        h2{
+        h2 {
             color: white;
             font-size: 26px;
 
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .sidebar {
+        width: 11%;
+        z-index: 11;
+        .content-sidebar {
+            a {
+                img {
+                    height: 22px;
+                }
+            }
+        }
+    }
+    .nav {
+        &.home-nav {
+            ul {
+                .classic-link {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    .page-content {
+        .first-section {
+            text-align: center;
+        }
+    }
+    .second-section {
+        height: auto;
+        .d-flex {
+            flex-direction: column;
+            .block {
+                width: 100%;
+                padding: 40px 30px;
+                &.article-1, &.article-2 {
+                    margin-bottom: 50px;
+                    height: 420px;
+                }
+
+                &.maternelle-1 {
+                    width: auto;
+                    height: 420px;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                }
+            }
         }
     }
 }
