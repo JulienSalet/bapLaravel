@@ -30,4 +30,12 @@
     })
 </script>
 
+<script data-turbolinks="false">
+    $(document).ready(function () {
+        $('.resp-link').on('click', function () {
+            $('.resp').toggleClass('active');
+        });
+    })
+</script>
+
 </html>

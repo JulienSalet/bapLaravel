@@ -488,8 +488,46 @@ a {
         }
     }
 }
-
+.resp-link{
+    display: none;
+}
+.resp{
+    display: none;
+}
 @include media-breakpoint-down(md) {
+    .resa{
+        .row{
+            .co{
+                margin-left: 0 !important;
+            }
+            .inscri{
+                margin-left: 0 !important;
+            }
+        }
+    }
+    .galerie{
+        .d-flex{
+            flex-direction: column;
+            div{
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .resp{
+        background-color: #fcc12d;
+        cursor: pointer;
+        &.active{
+            display: flex;
+            flex-direction: column;
+            margin-left: 11%;
+            a{
+                color: #000;
+            }
+        }
+    }
+    .resp-link{
+        display: block;
+    }
     .sidebar {
         width: 11%;
         z-index: 11;
