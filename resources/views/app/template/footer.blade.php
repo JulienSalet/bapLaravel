@@ -21,8 +21,8 @@
 @include('app.partials.notifications')
 @yield('js')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.1.1/turbolinks.js"
-        data-turbolinks-eval="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.1.1/turbolinks.js" data-turbolinks-eval="false"></script>
+
 <script>
     Turbolinks.start();
     document.addEventListener('turbolinks:load', function () {
@@ -34,6 +34,10 @@
     $(document).ready(function () {
         $('.resp-link').on('click', function () {
             $('.resp').toggleClass('active');
+            $('.sidebar').toggleClass('active')
+            $('.content-page').toggleClass('active');
+            $('.nav').toggleClass('active');
+            
         });
     })
 </script>

@@ -528,7 +528,24 @@ a {
     .resp-link{
         display: block;
     }
+    .content-page{
+        margin-left: 0px;
+
+        &.active{
+            margin-left: 7%;
+        }
+    }
+    .nav{
+        margin-left: 0px;
+        &.active{
+            margin-left: 7%;
+        }
+    }
     .sidebar {
+        display: none;
+        &.active{
+            display: flex;
+        }
         width: 11%;
         z-index: 11;
         .content-sidebar {
