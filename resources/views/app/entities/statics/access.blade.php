@@ -23,15 +23,15 @@
                         <div class="col-md-6">
                             <div class="itm-metro d-flex flex-column align-items-center justify-content-start">
                                 <h3 class="text-center font-weight-bold mb-5">{!! getTexts('access-adresse') !!}</h3>
-                                <div class="w-100 mb-2 justify-content-center d-flex align-items-center">
-                                    <img src="{{ asset('images/metro-1.png') }}" alt="" class="mr-5" width="250px>
+                                <div class="ml-5 w-100 mb-2 justify-content-center d-flex align-items-center">
+                                    <img src="{{ asset('images/metro-1.png') }}" alt="" class="mr-5" width="250px">
                                     <span>{!! getTexts('access-first-stop') !!}</span>
                                 </div>
-                                <div class="w-100 mb-2 justify-content-center d-flex align-items-center">
-                                    <img src="{{ asset('images/metro-2.png') }}" alt="" class="mr-5" width="250px>
+                                <div class="ml-5 w-100 mb-2 justify-content-center d-flex align-items-center">
+                                    <img src="{{ asset('images/metro-2.png') }}" alt="" class="mr-5" width="250px">
                                     <span>{!! getTexts('access-second-stop') !!}</span>
                                 </div>
-                                <div class="w-100 mb-2 justify-content-center d-flex align-items-center">
+                                <div class="ml-5 w-100 mb-2 justify-content-center d-flex align-items-center">
                                     <img src="{{ asset('images/metro-3.png') }}" alt="" class="mr-5" width="250px">
                                     <span>{!! getTexts('access-third-stop') !!}</span>
                                 </div>
