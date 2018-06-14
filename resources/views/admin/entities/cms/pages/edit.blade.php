@@ -220,7 +220,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 <i class="pg-close fs-14"></i>
                             </button>
-                            <h5>{!! trans('admin/entities/cms/pages.image-upload-by') !!}</h5>
+                            <h5>L'image</h5>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -231,7 +231,7 @@
                             </div>
                             <div class="m-t-10 sm-m-t-10">
                                 <button type="button" class="btn btn-primary btn-block m-t-5" data-dismiss="modal">
-                                    {{ trans('admin/entities/cms/pages.close') }}
+                                    Fermer
                                 </button>
                             </div>
                         </div>
