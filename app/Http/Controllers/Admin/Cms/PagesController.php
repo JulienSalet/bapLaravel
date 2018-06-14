@@ -79,10 +79,10 @@ class PagesController extends Controller
         if (request()->has('og_description') && $request->og_description != null) {
             $page->og_description = $request->og_description;
         }
-        
-        if (request()->has('file')) {
-            $img = $this->uploadImage(request()->file('file'), str_slug($request->title) . '-og'); // TODO : Add width & height in parameters
-            $page->fk_file_id = $img->id;
+    
+        if (request()->has('og_image')) {
+            $img = $this->uploadImage(request()->file('og_image'), str_slug($request->title) . '-og'); // TODO : Add width & height in parameters
+            $page->og_image = $img->id;
         }
         
         $page->save();
@@ -128,7 +128,6 @@ class PagesController extends Controller
         request()->validate([
             'title' => 'required|string'
         ]);
-    
         $page = Pages::where('id', $id)->first();
     
         if (request()->has('title') && $request->title != null) {
@@ -157,10 +156,10 @@ class PagesController extends Controller
         if (request()->has('og_description') && $request->og_description != null) {
             $page->og_description = $request->og_description;
         }
-    
-        if (request()->has('file')) {
-            $img = $this->uploadImage(request()->file('file'), str_slug($request->title) . '-og'); // TODO : Add width & height in parameters
-            $page->fk_file_id = $img->id;
+        
+        if (request()->has('og_image')) {
+            $img = $this->uploadImage(request()->file('og_image'), str_slug($request->title) . '-og'); // TODO : Add width & height in parameters
+            $page->og_image = $img->id;
         }
     
         $page->save();
