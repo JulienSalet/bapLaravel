@@ -4,7 +4,7 @@
             <img src="http://cdn.onlinewebfonts.com/svg/img_523096.png" alt="" width="30px">
         </li>
         <li class="nav-item classic-link">
-            <a href="{{ action('App\StaticsController@showReservation') }}" class="nav-link">Réservation</a>
+            <a href="{{ action('App\StaticsController@showReservation') }}" data-turbolinks="false" class="nav-link">Réservation</a>
         </li>
         <li class="nav-item classic-link">
             <a href="{{ action('App\StaticsController@showBlog') }}" class="nav-link">Blog</a>
