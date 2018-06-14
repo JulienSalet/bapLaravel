@@ -39,7 +39,7 @@
             <h2 class="text-center">{!! getTexts("home-partical-info-span") !!}</h2>
             <div class="d-flex flex-column">
                 <span>{!! getTexts("home-span-horaire") !!}</span>
-                <span>{!! getTexts("home-day-week") !!}<strong>{!! getTexts("home-horraire-for-day-week") !!}</strong></span>
+                <span class="decal">{!! getTexts("home-day-week") !!}<strong>{!! getTexts("home-horraire-for-day-week") !!}</strong></span>
                 <span class="decal">{!! getTexts("home-day-wekkend") !!} <strong>{!! getTexts("home-horraire-for-weekend") !!}</strong></span>
             </div>
         </div>
